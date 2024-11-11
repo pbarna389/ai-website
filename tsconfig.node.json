@@ -20,14 +20,10 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "baseUrl": "./src",
-		"paths": {
-			"@components/*": ["./components/*"],
-			"@constants/*": ["./constants/*"],
-			"@assets/*": ["./assets/*"],
-			"@utils/*": ["./utils/*"],
-			"@pages/*": ["./pages/*"],
-			"@hooks/*": ["./hooks/*"],
-		}
+    "paths": {
+      "@assets": ["./assets"],
+      "@components": ["./components"]
+    }
   },
   "include": ["vite.config.ts"]
 }
