@@ -22,7 +22,11 @@
     "baseUrl": "./src",
     "paths": {
       "@assets": ["./assets"],
-      "@components": ["./components"]
+      "@components": ["./components"],
+      "@constants": ["./constants"],
+      "@helpers": ["./helpers"],
+      "@hooks": ["./hooks"],
+      "@services": ["./services"]
     }
   },
   "include": ["vite.config.ts"]
