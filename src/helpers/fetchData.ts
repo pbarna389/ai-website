@@ -3,5 +3,5 @@ export const fetchData = async (url: string) => {
 
 	const data = await incomingData.json()
 
-	return data
+	return data as string
 }

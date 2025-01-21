@@ -1,5 +1,5 @@
-import { YT_PLAYLIST_ID, YT_API_KEY } from '@constants'
-import { useGetQuery } from 'hooks/useGetQuery'
+import { YT_API_KEY, YT_PLAYLIST_ID } from '@constants'
+import { useGetQuery } from '@hooks'
 
 export const YoutubeVideos = () => {
 	const { data } = useGetQuery(
@@ -7,6 +7,7 @@ export const YoutubeVideos = () => {
 		'youtubeData'
 	)
 
+	// eslint-disable-next-line no-console
 	console.log(data)
 
 	return <div>Videos will be here</div>

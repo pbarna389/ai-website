@@ -21,13 +21,17 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": "./src",
     "paths": {
-      "@assets": ["./assets"],
-      "@components": ["./components"],
-      "@constants": ["./constants"],
-      "@helpers": ["./helpers"],
-      "@hooks": ["./hooks"],
-      "@services": ["./services"]
-    }
+					"@assets": ["./assets"],
+					"@components": ["./components"],
+					"@constants": ["./constants"],
+					"@helpers": ["./helpers"],
+					"@hooks": ["./hooks"],
+					"@pages": ["./pages"],
+					"@router": ["./router"],
+					"@services": ["./services"],
+					"@structure": ["./structure"],
+					"@types": ["./types"]
+				}
   },
   "include": ["vite.config.ts"]
 }
