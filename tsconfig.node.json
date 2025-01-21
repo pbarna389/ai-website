@@ -26,10 +26,10 @@
 					"@constants": ["./constants"],
 					"@helpers": ["./helpers"],
 					"@hooks": ["./hooks"],
+					"@layout": ["./layout"],
 					"@pages": ["./pages"],
 					"@router": ["./router"],
 					"@services": ["./services"],
-					"@structure": ["./structure"],
 					"@types": ["./types"]
 				}
   },

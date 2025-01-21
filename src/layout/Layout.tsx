@@ -2,7 +2,7 @@ import { Outlet } from 'react-router'
 
 import { Navbar } from '@components'
 
-export const Structure = () => {
+export const Layout = () => {
 	return (
 		<div>
 			<Navbar />

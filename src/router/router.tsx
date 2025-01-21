@@ -1,11 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom'
 
+import { Layout } from '@layout'
 import { Home, InstagramPictures, YoutubeVideos } from '@pages'
-import { Structure } from '@structure'
 
 export const router = createBrowserRouter([
 	{
-		element: <Structure />,
+		element: <Layout />,
 		children: [
 			{
 				path: '/',
