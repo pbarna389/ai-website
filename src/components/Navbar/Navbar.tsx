@@ -1,13 +1,18 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import { pageUrls } from './utils'
 
 export const Navbar = () => {
 	return (
-		<ul>
-			{pageUrls.map((el) => (
-				<Link to={el}>{el}</Link>
-			))}
-		</ul>
+		<nav>
+			Navbar
+			<ul>
+				{pageUrls.map((el) => (
+					<NavLink key={el} to={el}>
+						{el}
+					</NavLink>
+				))}
+			</ul>
+		</nav>
 	)
 }
