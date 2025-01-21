@@ -1,4 +1,6 @@
-import { Header } from '@components'
+import { Header, Navbar } from '@components'
+
+import { Outlet } from 'react-router'
 
 import { useGetQuery } from 'hooks/useGetQuery'
 
@@ -15,6 +17,8 @@ export const App = () => {
 	return (
 		<div>
 			<Header />
+			<Navbar />
+			<Outlet />
 		</div>
 	)
 }
