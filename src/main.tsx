@@ -5,17 +5,12 @@ import { queryClient } from '@services'
 
 import { QueryClientProvider } from '@tanstack/react-query'
 
-import { RouterProvider } from 'react-router-dom'
-
-import { router } from './router'
-import { Header, Footer } from '@components'
+import { App } from 'App'
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<QueryClientProvider client={queryClient}>
-			<Header />
-			<RouterProvider router={router} />
-			<Footer />
+			<App />
 		</QueryClientProvider>
 	</StrictMode>
 )

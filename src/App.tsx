@@ -1,12 +1,14 @@
-import { Navbar } from '@components'
+import { Footer, Header } from '@components'
 
-import { Outlet } from 'react-router'
+import { RouterProvider } from 'react-router'
+import { router } from 'router'
 
 export const App = () => {
 	return (
-		<div>
-			<Navbar />
-			<Outlet />
-		</div>
+		<>
+			<Header />
+			<RouterProvider router={router} />
+			<Footer />
+		</>
 	)
 }
