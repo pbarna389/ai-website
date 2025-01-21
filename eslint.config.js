@@ -121,6 +121,7 @@ export default tseslint
 						count: 1
 					}
 				],
+				'@eslint-react/dom/no-unsafe-iframe-sandbox': 0,
 				'import/order': [
 					'error',
 					{

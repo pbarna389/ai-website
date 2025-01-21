@@ -1,14 +1,23 @@
+import { convertVideoLinks } from './utils'
+
+import { VideoPlayer } from './components'
+
 import { YT_API_KEY, YT_PLAYLIST_ID } from '@constants'
 import { useGetQuery } from '@hooks'
 
+import type { YoutubeModel } from '@types'
+import type { ContentModel } from 'types/models/models'
+
 export const YoutubeVideos = () => {
-	const { data } = useGetQuery(
+	const { data, error } = useGetQuery<YoutubeModel, ContentModel[]>(
 		`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=${YT_PLAYLIST_ID}&key=${YT_API_KEY}`,
-		'youtubeData'
+		'youtubeData',
+		convertVideoLinks
 	)
 
-	// eslint-disable-next-line no-console
-	console.log(data)
+	if (error && !data) {
+		return <p>Something went down the shitter, please try again later!</p>
+	}
 
-	return <div>Videos will be here</div>
+	return <div>{data?.map((el) => <VideoPlayer key={el.videoId} link={el.videoId} />)}</div>
 }
