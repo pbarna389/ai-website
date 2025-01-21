@@ -1,1 +1,1 @@
-export { queryClient } from "./QueryService";
+export { queryClient } from './QueryService'
