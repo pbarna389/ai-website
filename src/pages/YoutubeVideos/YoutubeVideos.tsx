@@ -17,8 +17,8 @@ export const YoutubeVideos = () => {
 		`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=${YT_PLAYLIST_ID}&key=${YT_API_KEY}`,
 		'youtubeData',
 		{
-			setShownData,
-			selectFunction: convertVideoLinks
+			selectFunction: convertVideoLinks,
+			setShownData
 		}
 	)
 
@@ -32,8 +32,8 @@ export const YoutubeVideos = () => {
 
 	return (
 		<div>
-			{shownData.map((el) => (
-				<VideoPlayer key={el.videoId} link={el.videoId} />
+			{shownData.map((el, idx) => (
+				<VideoPlayer key={el.videoId} link={el.videoId} idx={idx} />
 			))}
 		</div>
 	)
