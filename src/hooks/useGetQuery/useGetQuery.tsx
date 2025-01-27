@@ -1,18 +1,48 @@
-import type { UseQueryResult } from '@tanstack/react-query'
+import { type Dispatch, type SetStateAction, useState } from 'react'
+
 import { useQuery } from '@tanstack/react-query'
 
 import { fetchData } from '@helpers'
 
-export const useGetQuery = <IncomingType, ReturnType = IncomingType>(
+import type { ContentModel } from '@types'
+import type { YoutubeReturnType } from 'pages/YoutubeVideos/types'
+
+export const useGetQuery = <IncomingType,>(
 	url: string,
 	queryKey: string,
-	selectFunction?: (item: IncomingType) => ReturnType
+	helpers: {
+		setShownData: Dispatch<SetStateAction<ContentModel[]>>
+		selectFunction?: (item: IncomingType) => YoutubeReturnType
+	}
 ) => {
-	const data: UseQueryResult<ReturnType, Error> = useQuery({
-		queryKey: [url, queryKey],
-		queryFn: () => fetchData<IncomingType>(url),
+	const [maxPage, setMaxPage] = useState<number>(0)
+	const [currentPage, setCurrentPage] = useState<number>(1)
+	const [token, setToken] = useState<string>('')
+
+	const { selectFunction, setShownData } = helpers
+
+	const incomingData = useQuery({
+		queryKey: [url, queryKey, currentPage, token],
+		queryFn: () => fetchData<IncomingType>(url, token),
 		select: selectFunction
 	})
 
-	return data
+	const { pageInfo } = incomingData.data ? incomingData.data : {}
+
+	const totalResults = pageInfo?.totalResults
+	const resultsPerPage = pageInfo?.resultsPerPage
+
+	if (totalResults && resultsPerPage && !maxPage) {
+		setMaxPage(totalResults % resultsPerPage)
+	}
+
+	if (currentPage <= maxPage && incomingData.data) {
+		setShownData((prev) => [...prev, ...incomingData.data.normalizedData])
+		setCurrentPage((prev) => prev + 1)
+		if (incomingData.data?.nextPageToken) {
+			setToken(incomingData?.data?.nextPageToken)
+		}
+	}
+
+	return incomingData
 }

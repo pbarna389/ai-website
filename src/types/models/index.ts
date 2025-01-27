@@ -1,1 +1,1 @@
-export type { YoutubeModel } from './models'
+export type { YoutubeModel, ContentModel } from './models'

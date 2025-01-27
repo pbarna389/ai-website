@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { convertVideoLinks } from './utils'
 
 import { VideoPlayer } from './components'
@@ -9,15 +11,30 @@ import type { YoutubeModel } from '@types'
 import type { ContentModel } from 'types/models/models'
 
 export const YoutubeVideos = () => {
-	const { data, error } = useGetQuery<YoutubeModel, ContentModel[]>(
+	const [shownData, setShownData] = useState<ContentModel[]>([])
+
+	const { error, isLoading } = useGetQuery<YoutubeModel>(
 		`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=${YT_PLAYLIST_ID}&key=${YT_API_KEY}`,
 		'youtubeData',
-		convertVideoLinks
+		{
+			setShownData,
+			selectFunction: convertVideoLinks
+		}
 	)
 
-	if (error && !data) {
+	if (isLoading) {
+		return <div>Loading...</div>
+	}
+
+	if (error && !shownData) {
 		return <p>Something went down the shitter, please try again later!</p>
 	}
 
-	return <div>{data?.map((el) => <VideoPlayer key={el.videoId} link={el.videoId} />)}</div>
+	return (
+		<div>
+			{shownData.map((el) => (
+				<VideoPlayer key={el.videoId} link={el.videoId} />
+			))}
+		</div>
+	)
 }

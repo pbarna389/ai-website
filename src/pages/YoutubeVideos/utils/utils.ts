@@ -1,8 +1,12 @@
+import type { YoutubeReturnType } from '../types'
 import type { YoutubeModel } from '@types'
-import type { ContentModel } from 'types/models/models'
 
-export const convertVideoLinks = (data: YoutubeModel): ContentModel[] => {
-	const normalizedData = data.items.map((element) => element.contentDetails)
+export const convertVideoLinks = (incomingData: YoutubeModel): YoutubeReturnType => {
+	const normalizedData = incomingData.items.map((element) => element.contentDetails)
 
-	return normalizedData
+	return {
+		normalizedData,
+		nextPageToken: incomingData.nextPageToken,
+		pageInfo: incomingData.pageInfo
+	}
 }
