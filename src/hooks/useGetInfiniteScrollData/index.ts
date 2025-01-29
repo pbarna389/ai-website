@@ -1,0 +1,1 @@
+export { useGetInfiniteScrollData } from './useGetInfiniteScrollData'
