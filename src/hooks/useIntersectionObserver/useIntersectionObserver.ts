@@ -1,25 +1,21 @@
+import { useEffect, useRef, useState } from 'react'
 import type { MutableRefObject } from 'react'
-import { useEffect } from 'react'
 
-export const useIntersectionObserver = (
-	setState: React.Dispatch<React.SetStateAction<boolean>>,
-	ref: MutableRefObject<HTMLDivElement | null>,
-	infiniteScrollRelated: {
-		idx: number
-	}
-) => {
-	const { idx } = infiniteScrollRelated
+export const useIntersectionObserver = () => {
+	const [isInView, setIntersecting] = useState<boolean>(false)
+	const ref: MutableRefObject<HTMLDivElement | null> = useRef(null)
 
 	useEffect(() => {
 		const callbackForObserver = (entries: IntersectionObserverEntry[]) => {
-			// console.log(entries);
 			const [entry] = entries
-			// console.log(entry);
-			if (entry.isIntersecting) {
-				setState(entry.isIntersecting)
+
+			const { isIntersecting } = entry
+
+			if (isIntersecting) {
+				setIntersecting(isIntersecting)
 			}
-			if (!entry.isIntersecting) {
-				setState(entry.isIntersecting)
+			if (!isIntersecting) {
+				setIntersecting(isIntersecting)
 			}
 		}
 		const { current } = ref
@@ -28,7 +24,7 @@ export const useIntersectionObserver = (
 		if (current) {
 			observer.observe(current)
 		}
-	}, [ref, setState, idx])
+	}, [ref, setIntersecting])
 
-	return [ref]
+	return { ref, isInView }
 }

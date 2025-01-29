@@ -1,40 +1,45 @@
-import { useState } from 'react'
-
-import { convertVideoLinks } from './utils'
-
 import { VideoPlayer } from './components'
 
 import { YT_API_KEY, YT_PLAYLIST_ID } from '@constants'
-import { useGetQuery } from '@hooks'
+import { useGetInfiniteScrollData } from '@hooks'
 
-import type { YoutubeModel } from '@types'
-import type { ContentModel } from 'types/models/models'
+import type { ContentModel, YoutubeModel } from '@types'
 
 export const YoutubeVideos = () => {
-	const [shownData, setShownData] = useState<ContentModel[]>([])
+	const { data, error, hasNextPage, fetchNextPage, isFetching } =
+		useGetInfiniteScrollData<YoutubeModel>(
+			`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=${YT_PLAYLIST_ID}&key=${YT_API_KEY}`,
+			'youtubeData'
+		)
 
-	const { error, isLoading } = useGetQuery<YoutubeModel>(
-		`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=${YT_PLAYLIST_ID}&key=${YT_API_KEY}`,
-		'youtubeData',
-		{
-			selectFunction: convertVideoLinks,
-			setShownData
-		}
-	)
+	const { pages } = data ? data : {}
 
-	if (isLoading) {
-		return <div>Loading...</div>
-	}
-
-	if (error && !shownData) {
+	if (error && !data?.pages) {
 		return <p>Something went down the shitter, please try again later!</p>
 	}
 
+	const shownData = pages?.reduce((arr: ContentModel[], curr) => {
+		const videoItems = [...curr.items.map((el) => el.contentDetails)]
+
+		arr.push(...videoItems)
+
+		return arr
+	}, [])
+
 	return (
 		<div>
-			{shownData.map((el, idx) => (
-				<VideoPlayer key={el.videoId} link={el.videoId} idx={idx} />
+			{shownData?.map(({ videoId }, idx) => (
+				<VideoPlayer
+					currVideosAmount={shownData.length}
+					fetchNextPage={fetchNextPage}
+					key={videoId}
+					link={videoId}
+					idx={idx}
+					isFetching={isFetching}
+					hasNextPage={hasNextPage}
+				/>
 			))}
+			{isFetching && <div>FETCH NEW DATA</div>}
 		</div>
 	)
 }

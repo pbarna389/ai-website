@@ -1,1 +1,0 @@
-export { useGetQuery } from './useGetQuery'
