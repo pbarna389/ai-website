@@ -11,8 +11,8 @@ type YTModelVariants = string | PageInfoModel | ItemsModel[]
 
 export type ContentModel = {
 	videoId: string
-	videoPublishedAt: string
-	[key: string]: string
+	[key: string]: string | undefined
+	videoPublishedAt?: string
 }
 
 export type ItemsModel = {

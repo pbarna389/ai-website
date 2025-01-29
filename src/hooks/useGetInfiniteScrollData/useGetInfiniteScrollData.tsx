@@ -4,7 +4,6 @@ import { useInfiniteQuery } from '@tanstack/react-query'
 import { fetchData } from '@helpers'
 
 export const useGetInfiniteScrollData = <IncomingType extends { nextPageToken: string }>(
-	url: string,
 	queryKey: string
 ) => {
 	const incomingData = useInfiniteQuery<
@@ -14,8 +13,8 @@ export const useGetInfiniteScrollData = <IncomingType extends { nextPageToken: s
 		unknown[],
 		string
 	>({
-		queryKey: [queryKey, url],
-		queryFn: ({ pageParam }) => fetchData(url, pageParam),
+		queryKey: [queryKey],
+		queryFn: ({ pageParam }) => fetchData(queryKey, pageParam),
 		initialPageParam: '',
 		getNextPageParam: (lastPage) => lastPage.nextPageToken || null
 	})

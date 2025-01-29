@@ -24,7 +24,7 @@ export const useIntersectionObserver = () => {
 		if (current) {
 			observer.observe(current)
 		}
-	}, [ref, setIntersecting])
+	}, [ref, setIntersecting, isInView])
 
 	return { ref, isInView }
 }

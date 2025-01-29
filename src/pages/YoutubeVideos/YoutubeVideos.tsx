@@ -1,16 +1,12 @@
 import { VideoPlayer } from './components'
 
-import { YT_API_KEY, YT_PLAYLIST_ID } from '@constants'
 import { useGetInfiniteScrollData } from '@hooks'
 
 import type { ContentModel, YoutubeModel } from '@types'
 
 export const YoutubeVideos = () => {
 	const { data, error, hasNextPage, fetchNextPage, isFetching } =
-		useGetInfiniteScrollData<YoutubeModel>(
-			`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=${YT_PLAYLIST_ID}&key=${YT_API_KEY}`,
-			'youtubeData'
-		)
+		useGetInfiniteScrollData<YoutubeModel>('youtubeData')
 
 	const { pages } = data ? data : {}
 
@@ -28,17 +24,22 @@ export const YoutubeVideos = () => {
 
 	return (
 		<div>
-			{shownData?.map(({ videoId }, idx) => (
-				<VideoPlayer
-					currVideosAmount={shownData.length}
-					fetchNextPage={fetchNextPage}
-					key={videoId}
-					link={videoId}
-					idx={idx}
-					isFetching={isFetching}
-					hasNextPage={hasNextPage}
-				/>
-			))}
+			{shownData?.map(
+				({ videoId, videoPublishedAt }, idx) =>
+					videoPublishedAt &&
+					videoId && (
+						<VideoPlayer
+							videoPublishedAt={videoPublishedAt}
+							currVideosAmount={shownData.length}
+							fetchNextPage={fetchNextPage}
+							key={videoId}
+							link={videoId}
+							idx={idx}
+							isFetching={isFetching}
+							hasNextPage={hasNextPage}
+						/>
+					)
+			)}
 			{isFetching && <div>FETCH NEW DATA</div>}
 		</div>
 	)

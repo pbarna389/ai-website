@@ -1,5 +1,10 @@
-export const fetchData = async <DataT>(url: string, token: string): Promise<DataT> => {
-	const fullUrl = `${token.length ? `${url}&pageToken=${token}` : `${url}`}`
+import { YT_API_KEY, YT_PLAYLIST_ID, YT_SITE } from '@constants'
+
+export const fetchData = async <DataT>(queryName: string, token: string): Promise<DataT> => {
+	const fullUrl =
+		queryName === 'youtubeData'
+			? `${YT_SITE}${YT_PLAYLIST_ID}&key=${YT_API_KEY}${token && `&pageToken=${token}`}`
+			: ''
 
 	const incomingData = await fetch(fullUrl)
 

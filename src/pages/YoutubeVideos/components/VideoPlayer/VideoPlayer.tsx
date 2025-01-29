@@ -10,7 +10,8 @@ export const VideoPlayer = ({
 	currVideosAmount,
 	hasNextPage,
 	isFetching,
-	fetchNextPage
+	fetchNextPage,
+	videoPublishedAt
 }: VideoPlayerProps) => {
 	const { ref, isInView } = useIntersectionObserver()
 
@@ -24,7 +25,7 @@ export const VideoPlayer = ({
 
 	return (
 		<div ref={ref && ref}>
-			<p>{link}</p>
+			<p>{videoPublishedAt}</p>
 			<iframe
 				src={`https://www.youtube.com/embed/${link}`}
 				width={`500px`}
