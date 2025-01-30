@@ -1,3 +1,32 @@
+import { InstaPictures, InstaVideos } from './components'
+
+import { useGetInfiniteScrollData } from '@hooks'
+
+import type { InstaContentModel, InstaModel } from '@types'
+
 export const InstagramPictures = () => {
-	return <div>Instagram Pictures will be here</div>
+	const { data, error, isFetching } = useGetInfiniteScrollData<InstaModel>('pictures')
+
+	const { pages } = data ? data : {}
+
+	if (!data && error) {
+		return <div>Something went down the shitter</div>
+	}
+
+	const instaData = pages?.reduce((arr: InstaContentModel[], curr) => {
+		const nextBatch = curr.data
+
+		arr.push(...nextBatch)
+
+		return arr
+	}, [])
+
+	return (
+		<div>
+			{instaData?.map(({ media_type, id }) =>
+				media_type === 'VIDEO' ? <InstaVideos key={id} /> : <InstaPictures key={id} />
+			)}
+			{isFetching && <div>FETCH NEW DATA</div>}
+		</div>
+	)
 }

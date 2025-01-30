@@ -1,0 +1,1 @@
+export { InstaPictures } from './InstaPictures'

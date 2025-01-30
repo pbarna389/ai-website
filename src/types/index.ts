@@ -1,1 +1,7 @@
-export type { YoutubeModel, ContentModel } from './models'
+export type {
+	YoutubeModel,
+	YTContentModel,
+	InstaModel,
+	InstaPageInfo,
+	InstaContentModel
+} from './models'

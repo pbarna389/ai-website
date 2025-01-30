@@ -7,9 +7,7 @@ export const useIntersectionObserver = () => {
 
 	useEffect(() => {
 		const callbackForObserver = (entries: IntersectionObserverEntry[]) => {
-			const [entry] = entries
-
-			const { isIntersecting } = entry
+			const [{ isIntersecting }] = entries
 
 			if (isIntersecting) {
 				setIntersecting(isIntersecting)
