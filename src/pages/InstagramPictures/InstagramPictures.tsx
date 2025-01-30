@@ -23,8 +23,8 @@ export const InstagramPictures = () => {
 
 	return (
 		<div>
-			{instaData?.map(({ media_type, id }) =>
-				media_type === 'VIDEO' ? <InstaVideos key={id} /> : <InstaPictures key={id} />
+			{instaData?.map(({ media_type, media_url, id }) =>
+				media_type === 'VIDEO' ? <InstaVideos key={id} link={media_url} /> : <InstaPictures key={id} />
 			)}
 			{isFetching && <div>FETCH NEW DATA</div>}
 		</div>
