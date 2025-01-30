@@ -9,7 +9,7 @@ header {
   
   animation: backgroundAnimation 10s infinite;
 
-  background-color: blue;
+  background-color: rgb(0, 0, 170);
 
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
