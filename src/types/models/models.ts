@@ -1,30 +1,54 @@
 export type YoutubeModel = {
 	etag: string
-	items: ItemsModel[]
+	items: YTItemsModel[]
 	kind: string
 	nextPageToken: string
-	pageInfo: PageInfoModel
+	pageInfo: YTPageInfoModel
 	[key: string]: YTModelVariants
 }
 
-type YTModelVariants = string | PageInfoModel | ItemsModel[]
+type YTModelVariants = string | YTPageInfoModel | YTItemsModel[]
 
-export type ContentModel = {
+export type YTContentModel = {
 	videoId: string
 	[key: string]: string | undefined
 	videoPublishedAt?: string
 }
 
-export type ItemsModel = {
-	contentDetails: ContentModel
+export type YTItemsModel = {
+	contentDetails: YTContentModel
 	etag: string
 	id: string
 	kind: string
-	[key: string]: string | ContentModel
+	[key: string]: string | YTContentModel
 }
 
-export type PageInfoModel = {
+export type YTPageInfoModel = {
 	resultsPerPage: number
 	totalResults: number
 	[key: string]: number
+}
+
+export type InstaModel = {
+	data: InstaContentModel[]
+	paging: InstaPageInfo
+}
+
+export type InstaContentModel = {
+	id: string
+	media_type: 'VIDEO' | 'IMAGE'
+	media_url: string
+	[key: string]: string | 'VIDEO' | 'URL' | undefined
+	thumbnail_url?: string
+}
+
+export type InstaCursor = {
+	after: string
+	before: string
+}
+
+export type InstaPageInfo = {
+	cursors: InstaCursor
+	next?: string
+	previous?: string
 }

@@ -2,11 +2,11 @@ import { VideoPlayer } from './components'
 
 import { useGetInfiniteScrollData } from '@hooks'
 
-import type { ContentModel, YoutubeModel } from '@types'
+import type { YoutubeModel, YTContentModel } from '@types'
 
 export const YoutubeVideos = () => {
 	const { data, error, hasNextPage, fetchNextPage, isFetching } =
-		useGetInfiniteScrollData<YoutubeModel>('youtubeData')
+		useGetInfiniteScrollData<YoutubeModel>('videos')
 
 	const { pages } = data ? data : {}
 
@@ -14,7 +14,7 @@ export const YoutubeVideos = () => {
 		return <p>Something went down the shitter, please try again later!</p>
 	}
 
-	const shownData = pages?.reduce((arr: ContentModel[], curr) => {
+	const shownData = pages?.reduce((arr: YTContentModel[], curr) => {
 		const videoItems = [...curr.items.map((el) => el.contentDetails)]
 
 		arr.push(...videoItems)
@@ -23,13 +23,12 @@ export const YoutubeVideos = () => {
 	}, [])
 
 	return (
-		<div>
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 			{shownData?.map(
 				({ videoId, videoPublishedAt }, idx) =>
 					videoPublishedAt &&
 					videoId && (
 						<VideoPlayer
-							videoPublishedAt={videoPublishedAt}
 							currVideosAmount={shownData.length}
 							fetchNextPage={fetchNextPage}
 							key={videoId}

@@ -3,13 +3,11 @@ import type { MutableRefObject } from 'react'
 
 export const useIntersectionObserver = () => {
 	const [isInView, setIntersecting] = useState<boolean>(false)
-	const ref: MutableRefObject<HTMLDivElement | null> = useRef(null)
+	const ref: MutableRefObject<HTMLImageElement | null> = useRef(null)
 
 	useEffect(() => {
 		const callbackForObserver = (entries: IntersectionObserverEntry[]) => {
-			const [entry] = entries
-
-			const { isIntersecting } = entry
+			const [{ isIntersecting }] = entries
 
 			if (isIntersecting) {
 				setIntersecting(isIntersecting)

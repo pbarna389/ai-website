@@ -1,1 +1,0 @@
-export { InstagramPictures } from './InstagramPictures'

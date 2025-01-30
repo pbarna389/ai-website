@@ -15,5 +15,4 @@ export type VideoPlayerProps = {
 	idx: number
 	isFetching: boolean
 	link: string
-	videoPublishedAt?: string
 }
