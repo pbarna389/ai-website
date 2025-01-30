@@ -7,7 +7,7 @@ header {
   position: relative;
   overflow: hidden;
   
-  animation: backgroundAnimation 5s infinite;
+  animation: backgroundAnimation 10s infinite;
 
   background-color: blue;
 
@@ -30,19 +30,19 @@ img.left.second, img.right.second {
 }
 
 img.left.first {
-  animation: animateLeftFirst 5s infinite;
+  animation: animateLeftFirst 10s infinite;
 }
 
 img.right.first {
-  animation: animateRightFirst 5s infinite;
+  animation: animateRightFirst 10s infinite;
 }
 
 img.left.second {
-  animation: animateLeftSecond 5s infinite;
+  animation: animateLeftSecond 10s infinite;
 }
 
 img.right.second {
-  animation: animateRightSecond 5s infinite;
+  animation: animateRightSecond 10s infinite;
 }
 
 
@@ -50,13 +50,16 @@ img.right.second {
   0% {
     background-color: rgb(0, 0, 170);
   }
-  25% {
+  10% {
     background-color: rgb(248, 161, 176);
   }
-  75% {
+  50% {
     background-color: rgb(248, 161, 176);
   }
-  100% {
+  60% {
+    background-color: rgb(0, 0, 170);
+  }
+  100%{
     background-color: rgb(0, 0, 170);
   }
 }
@@ -66,19 +69,23 @@ img.right.second {
     left: -100%;
     opacity: 0;
   }
-  20% {
-    opcaity: 0.5;
+  5% {
+    opacity: 0.5;
   }
-  25% {
+  10% {
     left: 0;
     opacity: 1;
   }
-  75% {
+  50% {
     left: 0;
     opacity: 1;
   }
-  80% {
+  55% {
     opacity: 0.25;
+  }
+  60% {
+    left: -100%;
+    opacity: 0;
   }
   100% {
     left: -100%;
@@ -91,19 +98,23 @@ img.right.second {
     left: 0;
     opacity: 1;
   }
-  20% {
-    opcaity: 0.75;
+  5% {
+    opacity: 0.5;
   }
-  25% {
+  10% {
     left: -100%;
     opacity: 0;
   }
-  75% {
+  50% {
     left: -100%;
     opacity: 0;
   }
-  80% {
+  55% {
     opacity: 0.25;
+  }
+  60% {
+    left: 0;
+    opacity: 1;
   }
   100% {
     left: 0;
@@ -116,19 +127,23 @@ img.right.second {
     right: -100%;
     opacity: 0;
   }
-  20% {
+  5% {
     opcaity: 0.5;
   }
-  25% {
+  10% {
     right: 0;
     opacity: 1;
   }
-  75% {
+  50% {
     right: 0;
     opacity: 1;
   }
-  80% {
+  55% {
     opacity: 0.25;
+  }
+  60% {
+    right: -100%;
+    opacity: 0;
   }
   100% {
     right: -100%;
@@ -141,19 +156,23 @@ img.right.second {
     right: 0;
     opacity: 1;
   }
-  20% {
-    opacity: 0.5;
+  5% {
+    opcaity: 0.5;
   }
-  25% {
+  10% {
     right: -100%;
     opacity: 0;
   }
-  75% {
+  50% {
     right: -100%;
     opacity: 0;
   }
-  80% {
+  55% {
     opacity: 0.75;
+  }
+  60% {
+    right: 0;
+    opacity: 1;
   }
   100% {
     right: 0;
