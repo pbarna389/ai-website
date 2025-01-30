@@ -38,7 +38,8 @@ export type InstaContentModel = {
 	id: string
 	media_type: 'VIDEO' | 'IMAGE'
 	media_url: string
-	[key: string]: string | 'VIDEO' | 'IMAGE'
+	[key: string]: string | 'VIDEO' | 'URL' | undefined
+	thumbnail_url?: string
 }
 
 export type InstaCursor = {

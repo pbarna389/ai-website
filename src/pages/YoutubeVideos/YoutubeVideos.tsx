@@ -23,13 +23,12 @@ export const YoutubeVideos = () => {
 	}, [])
 
 	return (
-		<div>
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 			{shownData?.map(
 				({ videoId, videoPublishedAt }, idx) =>
 					videoPublishedAt &&
 					videoId && (
 						<VideoPlayer
-							videoPublishedAt={videoPublishedAt}
 							currVideosAmount={shownData.length}
 							fetchNextPage={fetchNextPage}
 							key={videoId}
