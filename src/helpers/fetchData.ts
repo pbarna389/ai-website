@@ -11,7 +11,7 @@ export const fetchData = async <DataT>(queryName: string, pageParam: string): Pr
 	const fullUrl =
 		queryName === 'videos'
 			? `${YT_SITE}${YT_PLAYLIST_ID}&key=${YT_API_KEY}${pageParam && `&pageToken=${pageParam}`}`
-			: `${INSTA_SITE}${INSTA_API_KEY}/media?fields=id,media_url,media_type,thumbnail_url&limit=5&access_token=${INSTA_ACCESS_TOKEN}${pageParam && `&after={pageParam}`}`
+			: `${INSTA_SITE}${INSTA_API_KEY}/media?fields=id,media_url,media_type,thumbnail_url&limit=5&access_token=${INSTA_ACCESS_TOKEN}${pageParam && `&after=${pageParam}`}`
 
 	const incomingData = await fetch(fullUrl)
 
