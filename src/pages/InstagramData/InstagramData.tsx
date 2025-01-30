@@ -4,7 +4,7 @@ import { useGetInfiniteScrollData } from '@hooks'
 
 import type { InstaContentModel, InstaModel } from '@types'
 
-export const InstagramPictures = () => {
+export const InstagramData = () => {
 	const { data, error, isFetching } = useGetInfiniteScrollData<InstaModel>('pictures')
 
 	const { pages } = data ? data : {}

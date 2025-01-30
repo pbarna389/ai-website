@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 
 import { Layout } from '@layout'
-import { Home, InstagramPictures, YoutubeVideos } from '@pages'
+import { Home, InstagramData, YoutubeVideos } from '@pages'
 
 export const router = createBrowserRouter([
 	{
@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
 					},
 					{
 						path: '/insta',
-						element: <InstagramPictures />
+						element: <InstagramData />
 					}
 				]
 			}
