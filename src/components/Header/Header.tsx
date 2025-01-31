@@ -13,12 +13,12 @@ export const Header = () => {
 	const [isIntroFinished] = useState<boolean>(true)
 
 	return (
-		<header className={(isIntroFinished && 'animated') || ''}>
+		<header className={`${isIntroFinished && 'animated'}`}>
 			<Logo />
-			<img className={'img left first animated'} src={girl1} />
-			<img className={'img left second animated'} src={girl2} />
-			<img className={'img right first animated'} src={girl3} />
-			<img className={'img right second animated'} src={girl4} />
+			<img className={`img left first ${isIntroFinished && 'animated'}`} src={girl1} />
+			<img className={`img left second ${isIntroFinished && 'animated'}`} src={girl2} />
+			<img className={`img right first ${isIntroFinished && 'animated'}`} src={girl3} />
+			<img className={`img right second ${isIntroFinished && 'animated'}`} src={girl4} />
 		</header>
 	)
 }
