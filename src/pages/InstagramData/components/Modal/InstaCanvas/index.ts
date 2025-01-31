@@ -1,0 +1,1 @@
+export { InstaCanvas } from './InstaCanvas'
