@@ -1,0 +1,1 @@
+export { InstaVideo } from './InstaVideo'

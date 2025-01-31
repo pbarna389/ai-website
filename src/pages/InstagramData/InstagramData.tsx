@@ -1,4 +1,4 @@
-import { InstaPictures } from './components'
+import { InstaContent } from './components'
 
 import { useGetInfiniteScrollData } from '@hooks'
 
@@ -25,7 +25,7 @@ export const InstagramData = () => {
 	return (
 		<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 			{instaData?.map((el, idx) => (
-				<InstaPictures
+				<InstaContent
 					key={el.id}
 					data={el}
 					idx={idx}
