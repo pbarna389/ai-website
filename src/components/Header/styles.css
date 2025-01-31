@@ -25,6 +25,35 @@ img {
   width: 20rem;
 }
 
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo > svg path {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 0.7;
+  stroke-dasharray: 135;
+  stroke-dashoffset: 135;
+  animation: logoAnimation 4s ease-in-out 1 forwards;
+}
+
+@keyframes logoAnimation {
+  0% {
+    stroke-dashoffset: 135;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    fill: white;
+    stroke-dashoffset: 0;
+  }
+}
+
 img.left.second, img.right.second {
   right: -100%;
 }
