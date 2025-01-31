@@ -1,0 +1,62 @@
+svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+svg path {
+  fill: transparent;
+  stroke-width: 0.7;
+  stroke-dasharray: 135;
+  stroke-dashoffset: 135;
+}
+
+svg path.start-Animation {
+  stroke: #fff;
+  animation: logoIntroAnimation 5s ease-in-out 1 forwards;
+}
+
+svg path.normal-Animation {
+  stroke-dashoffset: 0;
+  animation: logoAnimation 10s ease-in-out infinite;
+}
+
+@keyframes logoIntroAnimation {
+  0% {
+    stroke-dashoffset: 135;
+  }
+  35% {
+    fill: transparent;
+  }
+  50% {
+    fill: white;
+    stroke-dashoffset: 0;
+  }
+  60% {
+    fill: white;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    fill: transparent;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes logoAnimation {
+  0% {
+    stroke: rgb(226, 226, 226);
+  }
+  10% {
+    stroke: white;
+  }
+  50% {
+    stroke: white;
+  }
+  60% {
+    stroke: rgb(226, 226, 226);
+  }
+  100%{
+    stroke: rgb(226, 226, 226);
+  }
+}
