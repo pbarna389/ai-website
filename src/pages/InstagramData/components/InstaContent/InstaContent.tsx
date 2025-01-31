@@ -6,7 +6,7 @@ import { useIntersectionObserver } from '@hooks'
 
 import type { InstaPicturesProps } from './types'
 
-export const InstaPictures = ({
+export const InstaContent = ({
 	data,
 	currVideosAmount,
 	fetchNextPage,
