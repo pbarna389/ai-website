@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react'
 
-import { createPortal } from 'react-dom'
-
 import { Modal } from '../Modal'
 
 import { useIntersectionObserver } from '@hooks'
