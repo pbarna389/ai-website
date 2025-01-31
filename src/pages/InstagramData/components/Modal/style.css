@@ -1,0 +1,64 @@
+.modal {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+
+  width: 75%;
+  height: 80%;
+
+  background-color: grey;
+}
+
+.modal > p {
+  position: absolute;
+  transform: inherit;
+  top: inherit;
+  left: inherit;
+  z-index: 2;
+}
+
+.modal > button[type="button"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  border: none;
+  background: none;
+}
+
+.modal > button[type="button"]::before {
+  content: '';
+
+  position: absolute;
+  z-index: 2;
+  
+  transform: translate(-50%, -50%) rotate(45deg);
+  top: 50%;
+  left: 50%;
+
+  width: 4px;
+  height: 2rem;
+
+  background-color: black;
+}
+
+.modal > button[type="button"]::after {
+  content: '';
+
+  position: absolute;
+  z-index: 2;
+  
+  transform: translate(-50%, -50%) rotate(-45deg);
+  top: 50%;
+  left: 50%;
+
+  width: 4px;
+  height: 2rem;
+
+  background-color: black;
+}

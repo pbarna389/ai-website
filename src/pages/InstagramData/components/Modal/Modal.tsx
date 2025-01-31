@@ -2,6 +2,8 @@ import type { Dispatch, SetStateAction } from 'react'
 
 import { createPortal } from 'react-dom'
 
+import './style.css'
+
 type ModalProps = {
 	closeModal: Dispatch<SetStateAction<boolean>>
 }
@@ -11,5 +13,11 @@ export const Modal = ({ closeModal }: ModalProps) => {
 		closeModal(false)
 	}
 
-	return createPortal(<div onClick={() => handleCloseModal()}>Modal</div>, document.body)
+	return createPortal(
+		<div className="modal">
+			<p>Modal</p>
+			<button type={'button'} onClick={() => handleCloseModal()} />
+		</div>,
+		document.body
+	)
 }
