@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+import { handleModalState } from './utils'
+
 import { Modal } from '../Modal'
 
 import { useIntersectionObserver } from '@hooks'
@@ -30,19 +32,17 @@ export const InstaContent = ({
 
 	const decideImgUrl = thumbnail_url ? thumbnail_url : media_url
 
-	const handleModalOpen = () => {
-		setModalOpen(true)
-	}
-
 	return (
 		<>
 			<img
 				ref={ref && ref}
 				src={decideImgUrl}
 				style={{ width: '500px', height: '360px' }}
-				onClick={() => handleModalOpen()}
+				onClick={() => handleModalState(setModalOpen, modalOpen)}
 			/>
-			{modalOpen && <Modal closeModal={setModalOpen} />}
+			{modalOpen && (
+				<Modal callback={handleModalState} modalState={modalOpen} setModal={setModalOpen} />
+			)}
 		</>
 	)
 }

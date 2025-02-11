@@ -3,6 +3,6 @@
   box-sizing: content-box;
 }
 
-body.no-scroll {
+body.scrollbar-disabled {
   overflow: hidden;
 }
