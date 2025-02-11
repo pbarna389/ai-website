@@ -23,7 +23,7 @@ export const YoutubeVideos = () => {
 	}, [])
 
 	return (
-		<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+		<div className="page" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 			{shownData?.map(
 				({ videoId, videoPublishedAt }, idx) =>
 					videoPublishedAt &&

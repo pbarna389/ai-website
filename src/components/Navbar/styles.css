@@ -1,0 +1,28 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  gap: 1rem;
+
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.184);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.184);
+  backdrop-filter:blur(2px);
+
+  z-index: 1;
+  user-select: none;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.25rem;
+}
+
+nav > ul > a {
+  color: beige;
+  text-decoration: none;
+}

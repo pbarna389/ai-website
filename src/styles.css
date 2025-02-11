@@ -6,3 +6,7 @@
 body.scrollbar-disabled {
   overflow: hidden;
 }
+
+.page {
+  margin-top: 2rem;
+}
