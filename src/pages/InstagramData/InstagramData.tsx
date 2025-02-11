@@ -38,8 +38,8 @@ export const InstagramData = () => {
 						isFetching={isFetching}
 					/>
 				))}
+				{isFetching && <div>FETCH NEW DATA</div>}
 			</div>
-			{isFetching && <div>FETCH NEW DATA</div>}
 		</div>
 	)
 }

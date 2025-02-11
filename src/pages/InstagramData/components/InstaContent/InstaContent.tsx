@@ -25,7 +25,7 @@ export const InstaContent = ({
 	const { thumbnail_url, media_url } = data
 
 	useEffect(() => {
-		const currentVideoPercent = Math.floor((idx / currVideosAmount) * 100) > 70
+		const currentVideoPercent = Math.floor((idx / currVideosAmount) * 100) > 60
 
 		if (isInView && currentVideoPercent && hasNextPage && !isFetching) {
 			fetchNextPage()

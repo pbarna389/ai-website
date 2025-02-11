@@ -25,3 +25,9 @@ body.scrollbar-disabled {
   margin: 2rem;
   gap: 1rem;
 }
+
+  @media screen and (max-width: 768px) {
+  .page {
+    margin: 0.5rem;
+  }
+}
