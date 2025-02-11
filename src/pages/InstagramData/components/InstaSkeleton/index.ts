@@ -1,0 +1,1 @@
+export { InstaSkeleton } from './InstaSkeleton'
