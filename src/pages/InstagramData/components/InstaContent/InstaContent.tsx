@@ -41,7 +41,7 @@ export const InstaContent = ({
 				onClick={() => handleModalState(setModalOpen, modalOpen)}
 			/>
 			{modalOpen && (
-				<Modal callback={handleModalState} modalState={modalOpen} setModal={setModalOpen} />
+				<Modal data={data} callback={handleModalState} modalState={modalOpen} setModal={setModalOpen} />
 			)}
 		</>
 	)

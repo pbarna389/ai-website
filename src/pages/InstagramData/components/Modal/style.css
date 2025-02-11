@@ -1,5 +1,7 @@
 .modal {
   position: fixed;
+  display: flex;
+  justify-content: center;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
@@ -10,12 +12,18 @@
   background-color: grey;
 }
 
-.modal > p {
+
+.modal > video, .modal > img {
   position: absolute;
   transform: inherit;
   top: inherit;
   left: inherit;
   z-index: 2;
+}
+
+.modal > img {
+  width: 70%;
+  height: 100%;
 }
 
 .modal > button[type="button"] {
