@@ -20,10 +20,10 @@ export const Navbar = () => {
 	})
 
 	return (
-		<nav>
+		<nav className="trans-opacity">
 			<ul className={`${isOnTop && 'top'}`}>
 				{pageUrls.map((el) => (
-					<NavLink key={el} to={el.toLocaleLowerCase()}>
+					<NavLink className={'font-teko trans-opacity'} key={el} to={el.toLocaleLowerCase()}>
 						{el}
 					</NavLink>
 				))}

@@ -1,6 +1,10 @@
 * {
   margin: 0;
   box-sizing: content-box;
+
+  font-family: "Lato", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .flex {
@@ -26,7 +30,16 @@ body.scrollbar-disabled {
   gap: 1rem;
 }
 
-  @media screen and (max-width: 768px) {
+.trans-opacity {
+  transition: opacity 0.25s ease-in-out;
+}
+
+.font-teko {
+  font-family: "Teko", serif;
+  font-optical-sizing: auto;
+}
+
+@media screen and (max-width: 768px) {
   .page {
     margin: 0.5rem;
   }

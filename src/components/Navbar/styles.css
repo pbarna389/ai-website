@@ -12,6 +12,12 @@ nav {
 
   z-index: 1;
   user-select: none;
+
+  opacity: 0.75;
+}
+
+nav:hover {
+  opacity: 1;
 }
 
 nav > ul {
@@ -20,17 +26,27 @@ nav > ul {
   align-items: center;
   gap: 1rem;
   margin: 0.1rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
+  padding: 0;
   
   transition: margin 0.2s ease-in-out, font-size 0.2s ease-in;
 }
 
 nav > ul.top {
   margin: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 nav > ul > a {
+  font-weight: 600;
+  font-style: italic;
+
   color: white;
   text-decoration: none;
+
+  opacity: 0.5;
+}
+
+nav > ul > a:hover {
+  opacity: 1;
 }
