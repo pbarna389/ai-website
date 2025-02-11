@@ -1,11 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom'
 
-import { Layout } from '@layout'
 import { Home, InstagramData, YoutubeVideos } from '@pages'
+import { App } from 'App'
 
 export const router = createBrowserRouter([
 	{
-		element: <Layout />,
+		element: <App />,
 		children: [
 			{
 				path: '/',
@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
 						element: <YoutubeVideos />
 					},
 					{
-						path: '/insta',
+						path: '/instagram',
 						element: <InstagramData />
 					}
 				]

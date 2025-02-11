@@ -1,0 +1,36 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  gap: 1rem;
+
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.339);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.184);
+  backdrop-filter:blur(2px);
+
+  z-index: 1;
+  user-select: none;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.1rem;
+  font-size: 1rem;
+  
+  transition: margin 0.2s ease-in, font-size 0.2s ease-in;
+}
+
+nav > ul.top {
+  margin: 0.5rem;
+  font-size: 1.2rem;
+}
+
+nav > ul > a {
+  color: white;
+  text-decoration: none;
+}

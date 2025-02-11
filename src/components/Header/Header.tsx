@@ -21,7 +21,7 @@ export const Header = () => {
 	handleIntro()
 
 	return (
-		<header className={`${isIntroFinished && 'animated'}`}>
+		<header className={`${isIntroFinished ? 'animated' : 'intro'}`}>
 			<Logo />
 			<img className={`img left first ${isIntroFinished && 'animated'}`} src={girl1} />
 			<img className={`img left second ${isIntroFinished ? 'animated' : 'intro-anim'}`} src={girl2} />

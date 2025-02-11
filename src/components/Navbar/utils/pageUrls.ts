@@ -1,1 +1,1 @@
-export const pageUrls = ['youtube', 'insta']
+export const pageUrls = ['Youtube', 'Instagram']
