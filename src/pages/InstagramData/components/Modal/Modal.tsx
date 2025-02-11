@@ -1,14 +1,8 @@
-import type { Dispatch, SetStateAction } from 'react'
-
 import { createPortal } from 'react-dom'
 
-import './style.css'
+import type { ModalProps } from './types'
 
-type ModalProps = {
-	callback: (setModal: Dispatch<SetStateAction<boolean>>, modalState: boolean) => void
-	modalState: boolean
-	setModal: Dispatch<SetStateAction<boolean>>
-}
+import './style.css'
 
 export const Modal = ({ modalState, setModal, callback }: ModalProps) => {
 	return createPortal(

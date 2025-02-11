@@ -1,5 +1,7 @@
+import type { Dispatch, SetStateAction } from 'react'
+
 export const handleModalState = (
-	setModal: React.Dispatch<React.SetStateAction<boolean>>,
+	setModal: Dispatch<SetStateAction<boolean>>,
 	modalState: boolean
 ) => {
 	document.body.classList.toggle('scrollbar-disabled')
