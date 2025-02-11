@@ -4,6 +4,8 @@ import { useGetInfiniteScrollData } from '@hooks'
 
 import type { InstaContentModel, InstaModel } from '@types'
 
+import './styles.css'
+
 export const InstagramData = () => {
 	const { data, error, isFetching, fetchNextPage, hasNextPage } =
 		useGetInfiniteScrollData<InstaModel>('pictures')
@@ -23,18 +25,20 @@ export const InstagramData = () => {
 	}, [])
 
 	return (
-		<div className="page" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-			{instaData?.map((el, idx) => (
-				<InstaContent
-					key={el.id}
-					data={el}
-					idx={idx}
-					hasNextPage={hasNextPage}
-					fetchNextPage={fetchNextPage}
-					currVideosAmount={instaData.length}
-					isFetching={isFetching}
-				/>
-			))}
+		<div className="page">
+			<div className="instagram flex flex-center">
+				{instaData?.map((el, idx) => (
+					<InstaContent
+						key={el.id}
+						data={el}
+						idx={idx}
+						hasNextPage={hasNextPage}
+						fetchNextPage={fetchNextPage}
+						currVideosAmount={instaData.length}
+						isFetching={isFetching}
+					/>
+				))}
+			</div>
 			{isFetching && <div>FETCH NEW DATA</div>}
 		</div>
 	)

@@ -8,6 +8,8 @@ import { useIntersectionObserver } from '@hooks'
 
 import type { InstaPicturesProps } from './types'
 
+import './styles.css'
+
 export const InstaContent = ({
 	data,
 	currVideosAmount,
@@ -34,12 +36,14 @@ export const InstaContent = ({
 
 	return (
 		<>
-			<img
-				ref={ref && ref}
-				src={decideImgUrl}
-				style={{ width: '500px', height: '360px' }}
-				onClick={() => handleModalState(setModalOpen, modalOpen)}
-			/>
+			<div className="insta-img-wrapper">
+				<img
+					className={`${isInView ? 'shown' : 'hidden'}`}
+					ref={ref && ref}
+					src={decideImgUrl}
+					onClick={() => handleModalState(setModalOpen, modalOpen)}
+				/>
+			</div>
 			{modalOpen && (
 				<Modal data={data} callback={handleModalState} modalState={modalOpen} setModal={setModalOpen} />
 			)}

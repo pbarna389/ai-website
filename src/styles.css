@@ -3,10 +3,25 @@
   box-sizing: content-box;
 }
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
 body.scrollbar-disabled {
   overflow: hidden;
 }
 
 .page {
-  margin-top: 2rem;
+  margin: 2rem;
+  gap: 1rem;
 }

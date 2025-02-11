@@ -1,0 +1,32 @@
+.instagram > div.insta-img-wrapper {
+  width: calc(100% * 0.32);
+  height: calc(100% * 0.15);
+  max-height: 22.5rem;
+  overflow: hidden;
+}
+
+@media screen and (width < 1725px) {
+  .instagram > div.insta-img-wrapper {
+    width: calc(100% * 0.315);
+    height: calc(100% * 0.15);
+  }
+}
+
+.instagram > div.insta-img-wrapper > img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: none;
+
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out, scale 0.25s ease-in-out;
+}
+
+.instagram > div.insta-img-wrapper > img:hover {
+  scale: 1.35;
+  cursor: pointer;
+}
+
+.instagram > div.insta-img-wrapper > img.shown {
+  opacity: 1;
+}
