@@ -26,7 +26,7 @@ nav > ul {
   align-items: center;
   gap: 1rem;
   margin: 0.1rem;
-  font-size: 1.25rem;
+  font-size: calc(100vw * 0.014);
   padding: 0;
   
   transition: margin 0.2s ease-in-out, font-size 0.2s ease-in;
@@ -34,7 +34,7 @@ nav > ul {
 
 nav > ul.top {
   margin: 0.5rem;
-  font-size: 1.5rem;
+  font-size: calc(100vw * 0.02);
 }
 
 nav > ul > a {
