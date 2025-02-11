@@ -1,8 +1,7 @@
-import type { ContentModel } from '@types'
-import type { PageInfoModel } from 'types/models/models'
+import type { YTContentModel, YTPageInfoModel } from '@types'
 
 export type YoutubeReturnType = {
 	nextPageToken: string
-	normalizedData: ContentModel[]
-	pageInfo: PageInfoModel
+	normalizedData: YTContentModel[]
+	pageInfo: YTPageInfoModel
 }

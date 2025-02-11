@@ -34,11 +34,13 @@ export type InstaModel = {
 	paging: InstaPageInfo
 }
 
+type InstaMediaTypes = Uppercase<'video' | 'image' | 'canvas'>
+
 export type InstaContentModel = {
 	id: string
-	media_type: 'VIDEO' | 'IMAGE'
+	media_type: InstaMediaTypes
 	media_url: string
-	[key: string]: string | 'VIDEO' | 'URL' | undefined
+	[key: string]: string | InstaMediaTypes | undefined
 	thumbnail_url?: string
 }
 

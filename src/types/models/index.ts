@@ -1,5 +1,6 @@
 export type {
 	YoutubeModel,
+	YTPageInfoModel,
 	YTContentModel,
 	InstaModel,
 	InstaPageInfo,

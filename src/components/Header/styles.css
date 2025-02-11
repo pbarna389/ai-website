@@ -21,9 +21,6 @@ header.animated {
 header > img {
   position: absolute;
   top: 0;
-}
-
-img {
   width: 20rem;
 }
 

@@ -1,4 +1,4 @@
-import { InstaPictures } from './components'
+import { InstaContent } from './components'
 
 import { useGetInfiniteScrollData } from '@hooks'
 
@@ -24,10 +24,10 @@ export const InstagramData = () => {
 
 	return (
 		<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-			{instaData?.map(({ thumbnail_url, media_url, id }, idx) => (
-				<InstaPictures
-					key={id}
-					url={thumbnail_url ? thumbnail_url : media_url}
+			{instaData?.map((el, idx) => (
+				<InstaContent
+					key={el.id}
+					data={el}
 					idx={idx}
 					hasNextPage={hasNextPage}
 					fetchNextPage={fetchNextPage}
