@@ -43,6 +43,14 @@ body.scrollbar-disabled {
   transition: opacity 0.25s ease-in-out;
 }
 
+.hidden {
+  opacity: 0.5;
+}
+
+.shown {
+  opacity: 1;
+}
+
 .font-teko {
   font-family: "Teko", serif;
   font-optical-sizing: auto;

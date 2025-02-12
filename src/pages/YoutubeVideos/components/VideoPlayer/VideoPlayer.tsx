@@ -25,7 +25,7 @@ export const VideoPlayer = ({
 	}, [isInView, idx, currVideosAmount, hasNextPage, isFetching, fetchNextPage])
 
 	return (
-		<div ref={ref && ref}>
+		<div ref={ref && ref} className={`trans-opacity ${isInView ? 'shown' : 'hidden'}`}>
 			<iframe
 				src={`https://www.youtube.com/embed/${link}`}
 				allow="accelerometer; autoplay; encrypted-media; gyroscope;"

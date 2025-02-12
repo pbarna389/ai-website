@@ -30,16 +30,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  opacity: 0.5;
+  
   transition: opacity 0.5s ease-in-out, scale 0.5s ease-in-out;
 }
 
 .instagram > div.insta-img-wrapper > img:hover {
   scale: 1.2;
   cursor: pointer;
-}
-
-.instagram > div.insta-img-wrapper > img.shown {
-  opacity: 1;
 }
