@@ -40,7 +40,7 @@ export const InstagramData = () => {
 						isFetching={isFetchingNextPage}
 					/>
 				))}
-				{isFetchingNextPage && <Skeleton amount={5} classNames="instagram" />}
+				{isFetchingNextPage && <Skeleton amount={6} classNames="instagram" />}
 			</div>
 		</div>
 	)
