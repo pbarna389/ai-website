@@ -7,7 +7,7 @@ import { pageUrls } from './utils'
 import './styles.css'
 
 export const Navbar = () => {
-	const [isOnTop, setIsOnTop] = useState<boolean>()
+	const [isOnTop, setIsOnTop] = useState<boolean>(true)
 
 	useEffect(() => {
 		const checkCurrentHorPos = () => {

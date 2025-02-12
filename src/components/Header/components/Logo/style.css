@@ -19,12 +19,7 @@ svg path.start-Animation {
 svg path.normal-Animation {
   stroke-dashoffset: 0;
   stroke-width: 1;
-  transition: stroke-width 0.5s ease-in-out;
   animation: logoAnimation 10s ease-in-out infinite;
-}
-
-svg path.normal-Animation:hover {
-  stroke-width: 2.5;
 }
 
 @keyframes logoIntroAnimation {
