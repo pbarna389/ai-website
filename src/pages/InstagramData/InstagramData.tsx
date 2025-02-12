@@ -1,5 +1,6 @@
-import { InstaContent, InstaSkeleton } from './components'
+import { InstaContent } from './components'
 
+import { Skeleton } from '@components'
 import { useGetInfiniteScrollData } from '@hooks'
 
 import type { InstaContentModel, InstaModel } from '@types'
@@ -27,7 +28,7 @@ export const InstagramData = () => {
 	return (
 		<div className="page">
 			<div className="main-content instagram flex flex-center">
-				{isFetching && !pages && <InstaSkeleton />}
+				{isFetching && !pages && <Skeleton amount={6} classNames="instagram" />}
 				{instaData?.map((el, idx) => (
 					<InstaContent
 						key={el.id}
@@ -39,7 +40,7 @@ export const InstagramData = () => {
 						isFetching={isFetchingNextPage}
 					/>
 				))}
-				{isFetchingNextPage && <InstaSkeleton />}
+				{isFetchingNextPage && <Skeleton amount={5} classNames="instagram" />}
 			</div>
 		</div>
 	)
