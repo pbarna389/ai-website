@@ -1,5 +1,6 @@
 import { VideoPlayer } from './components'
 
+import { Skeleton } from '@components'
 import { useGetInfiniteScrollData } from '@hooks'
 
 import type { YoutubeModel, YTContentModel } from '@types'
@@ -40,7 +41,7 @@ export const YoutubeVideos = () => {
 							/>
 						)
 				)}
-				{isFetching && <div>FETCH NEW DATA</div>}
+				{isFetching && <Skeleton amount={5} classNames="youtube" />}
 			</div>
 		</div>
 	)
