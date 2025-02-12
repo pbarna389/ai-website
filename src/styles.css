@@ -26,8 +26,17 @@ body.scrollbar-disabled {
 }
 
 .page {
-  margin: 2rem;
+  margin: 2rem 4rem;
   gap: 1rem;
+}
+
+.page > .main-content {
+  border: 1px solid rgba(0, 0, 0, 0.239);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.239);
+  gap: 1.62rem;
+
+  padding: 0.5rem;
 }
 
 .trans-opacity {

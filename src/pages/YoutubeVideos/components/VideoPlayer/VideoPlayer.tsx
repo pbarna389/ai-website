@@ -4,6 +4,8 @@ import { useIntersectionObserver } from '@hooks'
 
 import type { VideoPlayerProps } from './types'
 
+import './styles.css'
+
 export const VideoPlayer = ({
 	link,
 	idx,
@@ -26,8 +28,6 @@ export const VideoPlayer = ({
 		<div ref={ref && ref}>
 			<iframe
 				src={`https://www.youtube.com/embed/${link}`}
-				width={`500px`}
-				height={`360px`}
 				allow="accelerometer; autoplay; encrypted-media; gyroscope;"
 				sandbox="allow-scripts allow-same-origin allow-presentation"
 			></iframe>

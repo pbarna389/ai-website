@@ -23,23 +23,25 @@ export const YoutubeVideos = () => {
 	}, [])
 
 	return (
-		<div className="page" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-			{shownData?.map(
-				({ videoId, videoPublishedAt }, idx) =>
-					videoPublishedAt &&
-					videoId && (
-						<VideoPlayer
-							currVideosAmount={shownData.length}
-							fetchNextPage={fetchNextPage}
-							key={videoId}
-							link={videoId}
-							idx={idx}
-							isFetching={isFetching}
-							hasNextPage={hasNextPage}
-						/>
-					)
-			)}
-			{isFetching && <div>FETCH NEW DATA</div>}
+		<div className="page">
+			<div className="main-content youtube flex .flex-column">
+				{shownData?.map(
+					({ videoId, videoPublishedAt }, idx) =>
+						videoPublishedAt &&
+						videoId && (
+							<VideoPlayer
+								currVideosAmount={shownData.length}
+								fetchNextPage={fetchNextPage}
+								key={videoId}
+								link={videoId}
+								idx={idx}
+								isFetching={isFetching}
+								hasNextPage={hasNextPage}
+							/>
+						)
+				)}
+				{isFetching && <div>FETCH NEW DATA</div>}
+			</div>
 		</div>
 	)
 }

@@ -26,7 +26,7 @@ export const InstagramData = () => {
 
 	return (
 		<div className="page">
-			<div className="instagram flex flex-center">
+			<div className="main-content instagram flex flex-center">
 				{isFetching && !pages && <InstaSkeleton />}
 				{instaData?.map((el, idx) => (
 					<InstaContent
