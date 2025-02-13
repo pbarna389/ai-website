@@ -18,6 +18,8 @@ footer {
   top: 0;
   left: 0;
 
+  height: calc(100vw * 0.05);
+
   transform: translate(0,0);
 }
 
@@ -31,4 +33,37 @@ footer {
   font-weight: 100;
   font-size: calc(100vw * 0.0075);
   color: rgba(255, 255, 255, 0.457);
+}
+
+@media screen and (max-width: 768px) {
+  .footer-main > svg {
+    height: calc(100vw * 0.15);
+  }
+
+  .footer-main {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .copyright > p:first-child {
+    font-size: calc(100vw * 0.02);
+  }
+
+  .copyright > p:last-child {
+    font-size: calc(100vw * 0.015);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footer-main > svg {
+    height: calc(100vw * 0.25);
+  }
+
+  .copyright > p:first-child {
+    font-size: calc(100vw * 0.035);
+  }
+
+  .copyright > p:last-child {
+    font-size: calc(100vw * 0.025);
+  }
 }
