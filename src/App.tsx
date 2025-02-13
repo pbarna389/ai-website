@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router'
 
-import { Navbar, Navigator } from '@components'
-import { Footer, Header } from '@layout'
+import { Navbar } from '@components'
+import { Footer, Header, Navigator } from '@layout'
 
 import 'styles.css'
 
