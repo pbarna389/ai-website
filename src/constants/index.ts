@@ -4,5 +4,7 @@ export {
 	YT_SITE,
 	INSTA_ACCESS_TOKEN,
 	INSTA_API_KEY,
-	INSTA_SITE
+	INSTA_SITE,
+	pageLinks,
+	socialLinks
 } from './constants'

@@ -1,0 +1,54 @@
+.social {
+  width: max-content;
+
+  gap: 1rem;
+
+  width: 10rem;
+}
+
+.social > a {
+  width: max-content;
+}
+
+.social > a > svg, .social > a > svg > path {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: translate(0,0);
+  
+  fill: white;
+  z-index: 888;
+  transition: scale 0.25s ease-in-out, fill 0.25s ease-in-out;
+}
+
+.social > a > svg:hover {
+  scale: 1.2;
+} 
+
+.social > a.link-Youtube > svg:hover > path {
+  fill: red;
+}
+
+.social > a.link-Facebook > svg:hover > path {
+  fill: #4267B2;
+}
+
+.social > a.link-Instagram > svg:hover > path {
+  fill: #E1306C;
+}
+
+.social > a.link-TikTok > svg:hover > path {
+  fill: #25F4EE;
+}
+
+.social > a.link-Reddit > svg:hover > path {
+  fill: #FF5700;
+}
+
+
+@media screen and (max-width: 768px) {
+  .social {
+    justify-content: center;
+    align-items: center;
+  }
+}
