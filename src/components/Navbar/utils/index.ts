@@ -1,1 +1,1 @@
-export { pageUrls, scrollToTop } from './utils'
+export { scrollToTop } from './utils'

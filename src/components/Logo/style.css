@@ -22,6 +22,20 @@ svg path.normal-Animation {
   animation: logoAnimation 10s ease-in-out infinite;
 }
 
+.footer-main > svg path.normal-Animation {
+  position: inherit;
+}
+
+.footer-main > svg {
+  position: relative;
+  width: max-content;
+
+  top: 0;
+  left: 0;
+
+  transform: translate(0,0);
+}
+
 @keyframes logoIntroAnimation {
   0% {
     stroke-dashoffset: 135;

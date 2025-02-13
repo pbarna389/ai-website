@@ -1,3 +1,5 @@
 export type LogoProps = {
-	isIntroFinished: boolean
+	height: number
+	isIntroFinished?: boolean
+	width?: number
 }
