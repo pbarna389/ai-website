@@ -11,8 +11,13 @@ export const Navigator = () => {
 
 	useEffect(() => {
 		const checkScrollbarOnMovement = () => {
+			const checkForMobile =
+				window.innerWidth < 768
+					? document.body.scrollHeight - window.innerHeight - 250
+					: document.body.scrollHeight - window.innerHeight - 100
+
 			setVisible(window.scrollY >= 20)
-			setOnBottom(window.scrollY >= document.body.scrollHeight - window.innerHeight - 20)
+			setOnBottom(window.scrollY >= checkForMobile)
 		}
 
 		window.addEventListener('scroll', checkScrollbarOnMovement)

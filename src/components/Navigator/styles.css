@@ -40,3 +40,17 @@
 .navigator.aroundBottom {
   top: 70.5vh;
 }
+
+@media screen and (max-width: 768px) {
+  .navigator {
+    width: 30px;  
+    height: 30px;
+
+    left: 0rem;
+    top: 90vh;
+  }
+
+  .navigator.aroundBottom {
+    top: 68.5vh;
+  }
+}
