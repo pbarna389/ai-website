@@ -5,5 +5,6 @@ export {
 	INSTA_ACCESS_TOKEN,
 	INSTA_API_KEY,
 	INSTA_SITE,
-	links
+	pageLinks,
+	socialLinks
 } from './constants'

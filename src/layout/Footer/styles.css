@@ -2,8 +2,8 @@ footer {
   padding: 0.75rem;
   gap: 1rem;
 
-  background-color: rgba(0, 0, 0, 0.916);
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.916);
+  background-color: rgba(0, 0, 0, 0.79);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.79);
   color: white;
 }
 
@@ -19,4 +19,16 @@ footer {
   left: 0;
 
   transform: translate(0,0);
+}
+
+.copyright > p:first-child {
+  font-weight: 200;
+  font-size: calc(100vw * 0.01);
+  color: rgba(255, 255, 255, 0.538);
+}
+
+.copyright > p:last-child {
+  font-weight: 100;
+  font-size: calc(100vw * 0.0075);
+  color: rgba(255, 255, 255, 0.457);
 }

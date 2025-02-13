@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { scrollToTop } from './utils'
 
 import './styles.css'
-import { links } from '@constants'
+import { pageLinks } from '@constants'
 
 export const Navbar = () => {
 	const [isOnTop, setIsOnTop] = useState<boolean>(true)
@@ -23,7 +23,7 @@ export const Navbar = () => {
 	return (
 		<nav className="trans-opacity">
 			<ul className={`${isOnTop && 'top'}`}>
-				{links.map((el) => (
+				{pageLinks.map((el) => (
 					<div key={el} onClick={scrollToTop}>
 						<NavLink className={'font-teko trans-opacity'} to={el.toLocaleLowerCase()}>
 							{el}
