@@ -32,7 +32,7 @@ nav > ul {
   transition: margin 0.2s ease-in-out, font-size 0.2s ease-in;
 }
 
-nav > ul.top {
+nav > ul.top, nav > ul:hover {
   margin: 0.5rem;
   font-size: calc(100vw * 0.02);
 }
@@ -47,7 +47,7 @@ nav > ul > div > a {
   opacity: 0.5;
 }
 
-nav > ul > a:hover {
+nav > ul > div > a:hover {
   opacity: 1;
 }
 
