@@ -30,6 +30,10 @@ body.scrollbar-disabled {
   justify-content: center;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .flex-sp-ev {
   justify-content: space-between;
 }

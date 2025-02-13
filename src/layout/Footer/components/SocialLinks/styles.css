@@ -2,6 +2,8 @@
   width: max-content;
 
   gap: 1rem;
+
+  width: 10rem;
 }
 
 .social > a {
@@ -39,3 +41,14 @@
   fill: #25F4EE;
 }
 
+.social > a.link-Reddit > svg:hover > path {
+  fill: #FF5700;
+}
+
+
+@media screen and (max-width: 768px) {
+  .social {
+    justify-content: center;
+    align-items: center;
+  }
+}

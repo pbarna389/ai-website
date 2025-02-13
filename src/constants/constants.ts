@@ -13,5 +13,7 @@ export const socialLinks: SocialLinksType = [
 	{ socialName: 'Youtube', link: 'http://www.youtube.com/@ElectricalCyberTunes' },
 	{ socialName: 'Instagram', link: 'http://www.instagram.com/electricalcybertunes' },
 	{ socialName: 'TikTok', link: 'http://www.tiktok.com/@electricalcybertunes' },
+	{ socialName: 'Reddit', link: 'http://www.reddit.com' },
+	{ socialName: 'X', link: 'http://www.x.com' },
 	{ socialName: 'Facebook', link: 'http://www.facebook.com' }
 ]

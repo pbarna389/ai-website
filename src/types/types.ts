@@ -3,12 +3,14 @@ enum SocialNamesEnum {
 	Youtube = 'Youtube',
 	Instagram = 'Instagram',
 	Facebook = 'Facebook',
-	TikTok = 'TikTok'
+	TikTok = 'TikTok',
+	X = 'X',
+	Reddit = 'Redit'
 }
 
 export type SocialNames = keyof typeof SocialNamesEnum
 
-export type PageLinksType = Exclude<SocialNames, 'TikTok' | 'Facebook'>[]
+export type PageLinksType = Exclude<SocialNames, 'X' | 'Facebook' | 'Reddit'>[]
 
 type SocialVariantsTypeSelector<KeyType extends string, AssignedType> = {
 	[key in KeyType]: AssignedType

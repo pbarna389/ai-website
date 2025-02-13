@@ -1,5 +1,7 @@
 import { socialLinks } from '@constants'
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
+import { FaRedditAlien } from 'react-icons/fa6'
 
 import { iconSize } from './constants'
 
@@ -11,12 +13,14 @@ const socials: SocialPickTypes = {
 	Youtube: <FaYoutube size={iconSize} />,
 	Facebook: <FaFacebookF size={iconSize} />,
 	Instagram: <FaInstagram size={iconSize} />,
-	TikTok: <FaTiktok size={iconSize} />
+	TikTok: <FaTiktok size={iconSize} />,
+	Reddit: <FaRedditAlien size={iconSize} />,
+	X: <FaXTwitter size={iconSize} />
 }
 
 export const SocialLinks = () => {
 	return (
-		<div className="social flex">
+		<div className="social flex flex-wrap">
 			{socialLinks.map(({ socialName, link }) => (
 				<a
 					className={`link-${socialName}`}
