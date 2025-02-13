@@ -5,7 +5,7 @@ import girl2 from './assets/girl2.png'
 import girl3 from './assets/girl3.png'
 import girl4 from './assets/girl4.png'
 
-import { Logo } from './components'
+import { Logo } from '@components'
 
 import './styles.css'
 
