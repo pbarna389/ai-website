@@ -10,8 +10,8 @@ export const INSTA_SITE = import.meta.env.VITE_INSTA_SITE
 
 export const pageLinks: PageLinksType = ['Youtube', 'Instagram']
 export const socialLinks: SocialLinksType = [
-	{ socialName: 'Youtube', link: 'http://www.youtube.com' },
-	{ socialName: 'Instagram', link: 'http://www.instagram.com' },
-	{ socialName: 'TikTok', link: 'http://www.tiktok.com' },
+	{ socialName: 'Youtube', link: 'http://www.youtube.com/@ElectricalCyberTunes' },
+	{ socialName: 'Instagram', link: 'http://www.instagram.com/electricalcybertunes' },
+	{ socialName: 'TikTok', link: 'http://www.tiktok.com/@electricalcybertunes' },
 	{ socialName: 'Facebook', link: 'http://www.facebook.com' }
 ]
