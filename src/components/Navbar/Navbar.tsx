@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { NavLink } from 'react-router-dom'
 
-import { pageUrls } from './utils'
+import { pageUrls, scrollToTop } from './utils'
 
 import './styles.css'
 
@@ -23,9 +23,11 @@ export const Navbar = () => {
 		<nav className="trans-opacity">
 			<ul className={`${isOnTop && 'top'}`}>
 				{pageUrls.map((el) => (
-					<NavLink className={'font-teko trans-opacity'} key={el} to={el.toLocaleLowerCase()}>
-						{el}
-					</NavLink>
+					<div key={el} onClick={scrollToTop}>
+						<NavLink className={'font-teko trans-opacity'} to={el.toLocaleLowerCase()}>
+							{el}
+						</NavLink>
+					</div>
 				))}
 			</ul>
 		</nav>
