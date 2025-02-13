@@ -6,14 +6,14 @@ import { fetchData } from '@helpers'
 import type { InstaPageInfo } from 'types/models/models'
 
 export const useGetInfiniteScrollData = <
-	IncomingType extends { nextPageToken?: string; paging?: InstaPageInfo }
+	DataType extends { nextPageToken?: string; paging?: InstaPageInfo }
 >(
 	queryKey: string
 ) => {
 	const incomingData = useInfiniteQuery<
-		IncomingType,
+		DataType,
 		Error,
-		InfiniteData<IncomingType, string>,
+		InfiniteData<DataType, string>,
 		unknown[],
 		string
 	>({
