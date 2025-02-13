@@ -1,8 +1,8 @@
-export const widthChecker = () => {
+export const widthChecker = (mobileMinus = 250, desktopMinus = 190) => {
 	const checkForMobile =
 		window.innerWidth < 768
-			? document.body.scrollHeight - window.innerHeight - 250
-			: document.body.scrollHeight - window.innerHeight - 50
+			? document.body.scrollHeight - window.innerHeight - mobileMinus
+			: document.body.scrollHeight - window.innerHeight - desktopMinus
 
 	return checkForMobile
 }
