@@ -50,3 +50,33 @@ nav > ul > a {
 nav > ul > a:hover {
   opacity: 1;
 }
+
+@media screen and (max-width: 1023px) {
+  nav > ul {
+    font-size: calc(100vw * 0.05)
+  }
+
+  nav > ul.top {
+    margin: 0.4rem;
+    font-size: calc(100vw * 0.06)
+  }  
+}
+
+@media screen and (max-width: 400px) {
+  nav {
+    opacity: 1;
+  }
+
+  nav > ul {
+    font-size: calc(100vw * 0.07)
+  }
+
+  nav > ul.top {
+    margin: 0.4rem;
+    font-size: calc(100vw * 0.085)
+  } 
+
+  nav > ul > a {
+    opacity: 0.75;
+  }
+}

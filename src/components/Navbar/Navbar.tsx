@@ -10,13 +10,13 @@ export const Navbar = () => {
 	const [isOnTop, setIsOnTop] = useState<boolean>(true)
 
 	useEffect(() => {
-		const checkCurrentHorPos = () => {
+		const checkScrollbarOnTop = () => {
 			return window.scrollY === 0 ? setIsOnTop(true) : setIsOnTop(false)
 		}
 
-		window.addEventListener('scroll', checkCurrentHorPos)
+		window.addEventListener('scroll', checkScrollbarOnTop)
 
-		return () => window.removeEventListener('scroll', checkCurrentHorPos)
+		return () => window.removeEventListener('scroll', checkScrollbarOnTop)
 	})
 
 	return (

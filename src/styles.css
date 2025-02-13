@@ -1,10 +1,19 @@
 * {
   margin: 0;
   box-sizing: content-box;
-
+  
   font-family: "Lato", serif;
   font-weight: 400;
   font-style: normal;
+}
+
+body.scrollbar-disabled {
+  overflow: hidden;
+}
+
+/*FIND SOME USABLE COLOR*/
+body {
+  background-color: rgba(255, 235, 205, 0.831);
 }
 
 .flex {
@@ -21,9 +30,6 @@
   justify-content: center;
 }
 
-body.scrollbar-disabled {
-  overflow: hidden;
-}
 
 .page {
   margin: 2rem 4rem;
