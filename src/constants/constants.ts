@@ -9,4 +9,9 @@ export const INSTA_ACCESS_TOKEN = import.meta.env.VITE_INSTA_ACCESS_TOKEN
 export const INSTA_SITE = import.meta.env.VITE_INSTA_SITE
 
 export const pageLinks: PageLinksType = ['Youtube', 'Instagram']
-export const socialLinks: SocialLinksType = [...pageLinks, 'Facebook']
+export const socialLinks: SocialLinksType = [
+	{ socialName: 'Youtube', link: 'http://www.youtube.com' },
+	{ socialName: 'Instagram', link: 'http://www.instagram.com' },
+	{ socialName: 'TikTok', link: 'http://www.tiktok.com' },
+	{ socialName: 'Facebook', link: 'http://www.facebook.com' }
+]

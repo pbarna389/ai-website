@@ -9,10 +9,15 @@ enum SocialNamesEnum {
 export type SocialNames = keyof typeof SocialNamesEnum
 
 export type PageLinksType = Exclude<SocialNames, 'TikTok' | 'Facebook'>[]
-export type SocialLinksType = Exclude<SocialNames, 'TikTok'>[]
 
 type SocialVariantsTypeSelector<KeyType extends string, AssignedType> = {
 	[key in KeyType]: AssignedType
 }
 
-export type SocialPickTypes = Omit<SocialVariantsTypeSelector<SocialNames, JSX.Element>, 'TikTok'>
+export type SocialPickTypes = SocialVariantsTypeSelector<SocialNames, JSX.Element>
+
+export type SocialLinksType = {
+	link: string
+	socialName: SocialNames
+	[key: string]: string | SocialNames
+}[]

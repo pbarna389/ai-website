@@ -34,3 +34,8 @@
 .social > a.link-Instagram > svg:hover > path {
   fill: #E1306C;
 }
+
+.social > a.link-TikTok > svg:hover > path {
+  fill: #25F4EE;
+}
+

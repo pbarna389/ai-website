@@ -1,24 +1,30 @@
 import { socialLinks } from '@constants'
-import { FaFacebookSquare, FaYoutube } from 'react-icons/fa'
-import { FaSquareInstagram } from 'react-icons/fa6'
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa'
 
-import './styles.css'
+import { iconSize } from './constants'
+
 import type { SocialPickTypes } from '@types'
 
-const iconSize = 40
+import './styles.css'
 
 const socials: SocialPickTypes = {
 	Youtube: <FaYoutube size={iconSize} />,
-	Facebook: <FaFacebookSquare size={iconSize} />,
-	Instagram: <FaSquareInstagram size={iconSize} />
+	Facebook: <FaFacebookF size={iconSize} />,
+	Instagram: <FaInstagram size={iconSize} />,
+	TikTok: <FaTiktok size={iconSize} />
 }
 
 export const SocialLinks = () => {
 	return (
 		<div className="social flex">
-			{socialLinks.map((el) => (
-				<a className={`link-${el}`} key={`social-link-${el}`} href={`${el}`} target="_blank">
-					{socials[el]}
+			{socialLinks.map(({ socialName, link }) => (
+				<a
+					className={`link-${socialName}`}
+					key={`social-link-${link}`}
+					href={`${link}`}
+					target="_blank"
+				>
+					{socials[socialName]}
 				</a>
 			))}
 		</div>
