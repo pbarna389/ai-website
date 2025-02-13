@@ -1,0 +1,13 @@
+.youtube > div {
+  width: 100%;
+  height: 65vh;
+
+  background-color: #555555bf
+}
+
+.youtube > div > iframe {
+  border: none;
+
+  width: inherit;
+  height: inherit;
+}

@@ -1,11 +1,12 @@
 import { VideoPlayer } from './components'
 
+import { Skeleton } from '@components'
 import { useGetInfiniteScrollData } from '@hooks'
 
 import type { YoutubeModel, YTContentModel } from '@types'
 
 export const YoutubeVideos = () => {
-	const { data, error, hasNextPage, fetchNextPage, isFetching } =
+	const { data, error, hasNextPage, fetchNextPage, isFetching, isFetchingNextPage } =
 		useGetInfiniteScrollData<YoutubeModel>('videos')
 
 	const { pages } = data ? data : {}
@@ -23,23 +24,26 @@ export const YoutubeVideos = () => {
 	}, [])
 
 	return (
-		<div className="page" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-			{shownData?.map(
-				({ videoId, videoPublishedAt }, idx) =>
-					videoPublishedAt &&
-					videoId && (
-						<VideoPlayer
-							currVideosAmount={shownData.length}
-							fetchNextPage={fetchNextPage}
-							key={videoId}
-							link={videoId}
-							idx={idx}
-							isFetching={isFetching}
-							hasNextPage={hasNextPage}
-						/>
-					)
-			)}
-			{isFetching && <div>FETCH NEW DATA</div>}
+		<div className="page">
+			<div className="main-content youtube flex .flex-column">
+				{isFetching && !pages && <Skeleton amount={5} classNames="youtube" />}
+				{shownData?.map(
+					({ videoId, videoPublishedAt }, idx) =>
+						videoPublishedAt &&
+						videoId && (
+							<VideoPlayer
+								currVideosAmount={shownData.length}
+								fetchNextPage={fetchNextPage}
+								key={videoId}
+								link={videoId}
+								idx={idx}
+								isFetching={isFetchingNextPage}
+								hasNextPage={hasNextPage}
+							/>
+						)
+				)}
+				{isFetchingNextPage && <Skeleton amount={5} classNames="youtube" />}
+			</div>
 		</div>
 	)
 }

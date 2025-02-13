@@ -1,0 +1,40 @@
+.instagram > div.insta-img-wrapper {
+  width: calc(100% * 0.319);
+  overflow: hidden;
+  height: 415px;
+
+  background-color: #555555bf;
+}
+
+@media screen and (max-width: 1725px) and (min-width: 1440px) {
+  .instagram > div.insta-img-wrapper {
+    width: calc(100% * 0.315);
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 768px) {
+  .instagram > div.insta-img-wrapper {
+    width: calc(calc(100% - 4rem) * 0.52);
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .instagram > div.insta-img-wrapper {
+    width: 100%;
+    height: 600px;
+  }
+}
+
+.instagram > div.insta-img-wrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  transition: opacity 0.5s ease-in-out, scale 0.5s ease-in-out;
+}
+
+.instagram > div.insta-img-wrapper > img:hover {
+  scale: 1.2;
+  cursor: pointer;
+}

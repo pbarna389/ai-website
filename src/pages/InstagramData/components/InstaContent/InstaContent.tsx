@@ -8,6 +8,8 @@ import { useIntersectionObserver } from '@hooks'
 
 import type { InstaPicturesProps } from './types'
 
+import './styles.css'
+
 export const InstaContent = ({
 	data,
 	currVideosAmount,
@@ -23,7 +25,7 @@ export const InstaContent = ({
 	const { thumbnail_url, media_url } = data
 
 	useEffect(() => {
-		const currentVideoPercent = Math.floor((idx / currVideosAmount) * 100) > 70
+		const currentVideoPercent = Math.floor((idx / currVideosAmount) * 100) > 60
 
 		if (isInView && currentVideoPercent && hasNextPage && !isFetching) {
 			fetchNextPage()
@@ -34,12 +36,14 @@ export const InstaContent = ({
 
 	return (
 		<>
-			<img
-				ref={ref && ref}
-				src={decideImgUrl}
-				style={{ width: '500px', height: '360px' }}
-				onClick={() => handleModalState(setModalOpen, modalOpen)}
-			/>
+			<div className="insta-img-wrapper">
+				<img
+					className={`${isInView ? 'shown' : 'hidden'}`}
+					ref={ref && ref}
+					src={decideImgUrl}
+					onClick={() => handleModalState(setModalOpen, modalOpen)}
+				/>
+			</div>
 			{modalOpen && (
 				<Modal data={data} callback={handleModalState} modalState={modalOpen} setModal={setModalOpen} />
 			)}

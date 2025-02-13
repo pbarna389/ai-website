@@ -1,11 +1,14 @@
 import { InstaContent } from './components'
 
+import { Skeleton } from '@components'
 import { useGetInfiniteScrollData } from '@hooks'
 
 import type { InstaContentModel, InstaModel } from '@types'
 
+import './styles.css'
+
 export const InstagramData = () => {
-	const { data, error, isFetching, fetchNextPage, hasNextPage } =
+	const { data, error, isFetching, isFetchingNextPage, fetchNextPage, hasNextPage } =
 		useGetInfiniteScrollData<InstaModel>('pictures')
 
 	const { pages } = data ? data : {}
@@ -23,19 +26,22 @@ export const InstagramData = () => {
 	}, [])
 
 	return (
-		<div className="page" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-			{instaData?.map((el, idx) => (
-				<InstaContent
-					key={el.id}
-					data={el}
-					idx={idx}
-					hasNextPage={hasNextPage}
-					fetchNextPage={fetchNextPage}
-					currVideosAmount={instaData.length}
-					isFetching={isFetching}
-				/>
-			))}
-			{isFetching && <div>FETCH NEW DATA</div>}
+		<div className="page">
+			<div className="main-content instagram flex flex-center">
+				{isFetching && !pages && <Skeleton amount={6} classNames="instagram" />}
+				{instaData?.map((el, idx) => (
+					<InstaContent
+						key={el.id}
+						data={el}
+						idx={idx}
+						hasNextPage={hasNextPage}
+						fetchNextPage={fetchNextPage}
+						currVideosAmount={instaData.length}
+						isFetching={isFetchingNextPage}
+					/>
+				))}
+				{isFetchingNextPage && <Skeleton amount={6} classNames="instagram" />}
+			</div>
 		</div>
 	)
 }

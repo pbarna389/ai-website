@@ -18,6 +18,7 @@ svg path.start-Animation {
 
 svg path.normal-Animation {
   stroke-dashoffset: 0;
+  stroke-width: 1;
   animation: logoAnimation 10s ease-in-out infinite;
 }
 
@@ -47,17 +48,50 @@ svg path.normal-Animation {
 @keyframes logoAnimation {
   0% {
     stroke: rgb(226, 226, 226);
+    stroke-width: 1;
   }
   10% {
     stroke: white;
+    stroke-width: 1;
+  }
+  25% {
+    stroke-width: 2;
+  }
+  30% {
+    stroke-width: 1;
+  }
+  45% {
+    stroke-width: 2;
   }
   50% {
     stroke: white;
   }
+  55% {
+    stroke-width: 1;
+  }
   60% {
     stroke: rgb(226, 226, 226);
   }
+  65% {
+    stroke-width: 1;
+  }
+  70% {
+    stroke-width: 2;
+  }
+  75% {
+    stroke-width: 1;
+  }
+  85% {
+    stroke-width: 1;
+  }
+  90% {
+    stroke-width: 2;
+  }
+  92.5% {
+    stroke-width: 1;
+  }
   100%{
     stroke: rgb(226, 226, 226);
+    stroke-width: 1;
   }
 }

@@ -18,10 +18,10 @@ const ComponentSelector = (data: InstaContentModel) => {
 
 export const Modal = ({ modalState, setModal, callback, data }: ModalProps) => {
 	return createPortal(
-		<div className="modal">
+		<>
+			<div className="modal" onClick={() => callback(setModal, modalState)} />
 			{ComponentSelector(data)[data.media_type]}
-			<button type={'button'} onClick={() => callback(setModal, modalState)} />
-		</div>,
+		</>,
 		document.body
 	)
 }

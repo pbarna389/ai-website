@@ -1,12 +1,69 @@
 * {
   margin: 0;
   box-sizing: content-box;
+  
+  font-family: "Lato", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/*FIND SOME USABLE COLOR*/
+body {
+  background-color: rgba(255, 235, 205, 0.831);
 }
 
 body.scrollbar-disabled {
   overflow: hidden;
 }
 
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+
 .page {
-  margin-top: 2rem;
+  margin: 2rem 4rem;
+  gap: 1rem;
+}
+
+.page > .main-content {
+  border: 1px solid rgba(0, 0, 0, 0.239);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.239);
+  gap: 1.62rem;
+
+  padding: 0.5rem;
+}
+
+.trans-opacity {
+  transition: opacity 0.25s ease-in-out;
+}
+
+.hidden {
+  opacity: 0.5;
+}
+
+.shown {
+  opacity: 1;
+}
+
+.font-teko {
+  font-family: "Teko", serif;
+  font-optical-sizing: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .page {
+    margin: 0.5rem;
+  }
 }
