@@ -1,5 +1,4 @@
-import { SocialLinks } from './components'
-
+import { SocialLinks } from '@components'
 import { Logo } from '@components'
 
 import './styles.css'

@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router'
 
-import { Navbar, Navigator } from '@components'
-import { Footer, Header } from '@layout'
+import { Navbar } from '@components'
+import { Footer, Header, Navigator, SocialPanel } from '@layout'
 
 import 'styles.css'
 
@@ -10,6 +10,7 @@ export const App = () => {
 		<>
 			<Navbar />
 			<Navigator />
+			<SocialPanel />
 			<Header />
 			<Outlet />
 			<Footer />

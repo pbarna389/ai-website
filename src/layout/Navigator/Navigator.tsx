@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { handleClick } from './helpers'
+import { widthChecker } from '@helpers'
 import { FaArrowUp } from 'react-icons/fa'
 
 import './styles.css'
@@ -11,10 +12,7 @@ export const Navigator = () => {
 
 	useEffect(() => {
 		const checkScrollbarOnMovement = () => {
-			const checkForMobile =
-				window.innerWidth < 768
-					? document.body.scrollHeight - window.innerHeight - 250
-					: document.body.scrollHeight - window.innerHeight - 100
+			const checkForMobile = widthChecker(250, 10)
 
 			setVisible(window.scrollY >= 20)
 			setOnBottom(window.scrollY >= checkForMobile)

@@ -9,6 +9,7 @@
 /*FIND SOME USABLE COLOR*/
 body {
   background-color: rgba(255, 235, 205, 0.831);
+  scroll-behavior: smooth;
 }
 
 body.scrollbar-disabled {
