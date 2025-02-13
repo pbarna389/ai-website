@@ -12,13 +12,13 @@ export const Navbar = () => {
 
 	useEffect(() => {
 		const checkScrollbarOnTop = () => {
-			return window.scrollY === 0 ? setIsOnTop(true) : setIsOnTop(false)
+			setIsOnTop(window.scrollY === 0)
 		}
 
 		window.addEventListener('scroll', checkScrollbarOnTop)
 
 		return () => window.removeEventListener('scroll', checkScrollbarOnTop)
-	})
+	}, [])
 
 	return (
 		<nav className="trans-opacity">
