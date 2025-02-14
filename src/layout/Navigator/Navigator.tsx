@@ -28,7 +28,7 @@ export const Navigator = () => {
 			className={`navigator ${!visible && 'invisible'} ${onBottom && 'aroundBottom'}`}
 			onClick={handleClick}
 		>
-			<FaArrowUp size={20} />
+			<FaArrowUp size={30} />
 		</div>
 	)
 }

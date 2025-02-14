@@ -29,6 +29,13 @@
   z-index: -1;
 }
 
+.navigator > svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 .navigator > svg > path {
   fill: white;
