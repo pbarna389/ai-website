@@ -21,10 +21,10 @@ export const Header = () => {
 	handleIntro()
 
 	return (
-		<header className={`${isIntroFinished ? 'animated' : 'intro'}`}>
-			<Logo isIntroFinished={isIntroFinished} width={600} height={158} />
+		<header className={`flex ${isIntroFinished ? 'animated' : 'intro'}`}>
 			<img className={`img left first ${isIntroFinished && 'animated'}`} src={girl1} />
 			<img className={`img left second ${isIntroFinished ? 'animated' : 'intro-anim'}`} src={girl2} />
+			<Logo isIntroFinished={isIntroFinished} width={600} height={158} />
 			<img className={`img right first ${isIntroFinished && 'animated'}`} src={girl3} />
 			<img className={`img right second ${isIntroFinished ? 'animated' : 'intro-anim'}`} src={girl4} />
 		</header>
