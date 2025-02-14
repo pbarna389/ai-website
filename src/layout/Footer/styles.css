@@ -39,7 +39,7 @@ footer {
 
 @media screen and (max-width: 768px) {
   footer {
-    height: 15rem;
+    height: 18.5rem;
   }
   .footer-main > svg {
     height: calc(100vw * 0.15);
