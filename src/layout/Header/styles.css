@@ -203,7 +203,7 @@ img.right.second.animated {
     opacity: 0;
   }
   5% {
-    opcaity: 0.25;
+    opacity: 0.25;
   }
   10% {
     right: -2.5%;
@@ -232,7 +232,7 @@ img.right.second.animated {
     opacity: 1;
   }
   5% {
-    opcaity: 0.5;
+    opacity: 0.5;
   }
   10% {
     right: -100%;
@@ -319,7 +319,7 @@ img.right.second.animated {
     opacity: 0;
   }
   5% {
-    opcaity: 0.25;
+    opacity: 0.25;
   }
   10% {
     right: -7.5%;
@@ -348,7 +348,7 @@ img.right.second.animated {
     opacity: 1;
   }
   5% {
-    opcaity: 0.5;
+    opacity: 0.5;
   }
   10% {
     right: -100%;

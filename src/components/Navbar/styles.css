@@ -10,7 +10,7 @@ nav {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.184);
   backdrop-filter:blur(2px);
 
-  z-index: 1;
+  z-index: 11;
   user-select: none;
 
   opacity: 0.75;
