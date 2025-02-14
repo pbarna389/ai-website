@@ -49,7 +49,6 @@ export default tseslint
 						format: ['camelCase', 'PascalCase']
 					}
 				],
-				'@typescript-eslint/no-unsafe-return': 'error',
 				'@typescript-eslint/no-explicit-any': 'error',
 				'@typescript-eslint/no-shadow': 'error',
 				'@typescript-eslint/array-type': 'error',
