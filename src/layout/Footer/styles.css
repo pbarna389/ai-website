@@ -6,7 +6,7 @@ footer {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.79);
   color: white;
 
-  height: 9rem;
+  height: max-content;
 }
 
 .footer-main > svg path.normal-Animation {
@@ -38,9 +38,6 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  footer {
-    height: 18.5rem;
-  }
   .footer-main > svg {
     height: calc(100vw * 0.15);
   }

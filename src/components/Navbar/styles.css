@@ -56,7 +56,7 @@ nav > ul > div > a:hover {
     font-size: calc(100vw * 0.05)
   }
 
-  nav > ul.top {
+  nav > ul.top, nav > ul:hover {
     margin: 0.4rem;
     font-size: calc(100vw * 0.06)
   }  
@@ -75,9 +75,9 @@ nav > ul > div > a:hover {
     font-size: calc(100vw * 0.08)
   }
 
-  nav > ul.top {
+  nav > ul.top, nav > ul:hover {
     margin: 0.4rem;
-    font-size: calc(100vw * 0.11)
+    font-size: calc(100vw * 0.10)
   } 
 
   nav > ul > div > a {
