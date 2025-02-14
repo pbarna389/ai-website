@@ -65,10 +65,10 @@ header > img {
     left: -100%
   }
   60% {
-    left: -7.5%;
+    left: -2.5%;
   }
   100% {
-    left: -7.5%;;
+    left: -2.5%;;
   }
 }
 
@@ -80,11 +80,11 @@ header > img {
     right: -100%;
   }
   60% {
-    right: -7.5%;
+    right: -2.5%;
   }
 
   100% {
-    right: -7.5%;
+    right: -2.5%;
   }
 }
 
