@@ -1,6 +1,6 @@
 .socialPanel {
   position: fixed;
-  z-index: 99;
+  z-index: 3;
   top: 40.3vh;
   right: -14rem;
 
@@ -17,6 +17,7 @@
 
 .socialPanel.invisible {
   opacity: 0;
+  z-index: 3;
 }
 
 .socialPanel:hover {

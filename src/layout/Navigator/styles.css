@@ -13,9 +13,9 @@
 
   opacity: 1;
 
-  transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out, opacity 0.50s ease-in-out, top 0.5s ease-in-out;
+  transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out, opacity 0.5s ease-in-out, top 0.5s ease-in-out;
 
-  z-index: 9999;
+  z-index: 3;
 }
 
 .navigator:hover {
@@ -24,10 +24,11 @@
 }
 
 .navigator.invisible {
-  top: 40vh;
+  top: 30vh;
   opacity: 0;
-  z-index: -1;
+  z-index: 0;
 }
+
 
 .navigator > svg {
   position: absolute;

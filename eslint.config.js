@@ -42,6 +42,7 @@ export default tseslint
 				'@typescript-eslint/adjacent-overload-signatures': 'error',
 				'@typescript-eslint/no-unused-vars': 'warn',
 				'@typescript-eslint/explicit-function-return-type': 'off',
+				'@typescript-eslint/no-unsafe-return': 'error',
 				'@typescript-eslint/naming-convention': [
 					'error',
 					{
