@@ -1,5 +1,6 @@
-import './style.css'
 import type { LogoProps } from './types'
+
+import './style.css'
 
 export const Logo = ({ isIntroFinished, height, width = 0 }: LogoProps) => {
 	return (

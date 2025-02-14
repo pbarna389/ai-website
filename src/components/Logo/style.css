@@ -1,8 +1,11 @@
-svg {
+header > svg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  height: calc(100vw * 0.15);
+  z-index: 10;
 }
 
 svg path {
@@ -93,5 +96,11 @@ svg path.normal-Animation {
   100%{
     stroke: rgb(226, 226, 226);
     stroke-width: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header > svg {
+    height: calc(100vw * 0.2);
   }
 }

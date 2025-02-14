@@ -51,7 +51,7 @@ nav > ul > div > a:hover {
   opacity: 1;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
   nav > ul {
     font-size: calc(100vw * 0.05)
   }
@@ -60,23 +60,27 @@ nav > ul > div > a:hover {
     margin: 0.4rem;
     font-size: calc(100vw * 0.06)
   }  
+
+  nav > ul > div > a {
+    opacity: 0.8;
+  }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   nav {
     opacity: 1;
   }
 
   nav > ul {
-    font-size: calc(100vw * 0.07)
+    font-size: calc(100vw * 0.08)
   }
 
   nav > ul.top {
     margin: 0.4rem;
-    font-size: calc(100vw * 0.085)
+    font-size: calc(100vw * 0.11)
   } 
 
   nav > ul > div > a {
-    opacity: 0.75;
+    opacity: 9;
   }
 }
