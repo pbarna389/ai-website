@@ -4,8 +4,9 @@ import { NavLink } from 'react-router-dom'
 
 import { scrollToTop } from './utils'
 
-import './styles.css'
 import { pageLinks } from '@constants'
+
+import './styles.css'
 
 export const Navbar = () => {
 	const [isOnTop, setIsOnTop] = useState<boolean>(true)
