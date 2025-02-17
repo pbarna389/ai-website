@@ -5,6 +5,7 @@ import type { VideoContextType } from './types'
 const initialContextState: VideoContextType = {
 	videoState: {
 		type: null,
+		isPlaying: false,
 		link: null
 	},
 	videoSetter: () => null

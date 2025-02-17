@@ -6,6 +6,7 @@ import type { VideoStateType } from '../types'
 
 const initialState = {
 	type: null,
+	isPlaying: false,
 	link: null
 }
 

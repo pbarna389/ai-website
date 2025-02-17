@@ -1,0 +1,23 @@
+.youtube > div {
+  width: 100%;
+  height: 80vh;
+
+  background-color: #555555bf;
+  cursor: pointer;
+}
+
+.youtube > div > img {
+  border: none;
+
+  width: inherit;
+  height: inherit;
+
+  object-fit: cover;
+  opacity: 0.85;
+
+  transition: opacity 0.15s ease-in;
+}
+
+.youtube > div > img:hover {
+  opacity: 1;
+}

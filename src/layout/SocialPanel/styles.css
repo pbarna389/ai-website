@@ -1,7 +1,7 @@
 .socialPanel {
   position: fixed;
   z-index: 3;
-  top: 40.3vh;
+  top: 60vh;
   right: -14rem;
 
   margin: 0;
@@ -27,9 +27,9 @@
 .social-helper{
   content: '';
   position: absolute;
-  transform: translate(0, -50%);
-  top: 50%;
-  left: -35px;
+  transform: translate(-50%, -50%);
+  top: 55%;
+  left: -19px;
   z-index: -1;
   
   rotate: 45deg;
@@ -38,5 +38,5 @@
   height: 40px;
 
   background-color: black;
-    box-shadow: 0px 0px 25px black;
+  box-shadow: 0px 0px 25px black;
 }

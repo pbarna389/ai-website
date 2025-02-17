@@ -23,7 +23,7 @@
 }
 
 
-video.instaContent,  img.instaContent {
+img.instaContent {
   object-position: center;
   object-fit: contain;
   background-position: center;

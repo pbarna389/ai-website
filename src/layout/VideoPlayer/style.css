@@ -1,0 +1,39 @@
+.videoPlayer {
+  position: fixed;
+  top: 20%;
+  right: -26.15%;
+
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  width: 25%;
+  height: 40%;
+
+  padding: 0.5rem;
+
+  background-color: black;
+  box-shadow: 0px 0px 10px black;
+
+  transition: right 0.5s ease-in-out, bottom 0.5s ease-in-out;
+
+  user-select: none;
+}
+
+.videoPlayer > .social-helper {
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: -19px;
+}
+
+.videoPlayer:hover {
+  right: 0;
+}
+
+.videoPlayer > svg {
+  cursor: pointer;
+}
+
+.videoPlayer > svg > path {
+  fill: white;
+}

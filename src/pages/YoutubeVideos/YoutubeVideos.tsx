@@ -1,9 +1,11 @@
-import { VideoPlayer } from './components'
+import { VideoThumbnail } from './components'
 
 import { Skeleton } from '@components'
 import { useGetInfiniteScrollData } from '@hooks'
 
-import type { YoutubeModel, YTContentModel } from '@types'
+import type { YoutubeModel } from '@types'
+
+import type { YTMergedObject } from './types'
 
 export const YoutubeVideos = () => {
 	const { data, error, hasNextPage, fetchNextPage, isFetching, isFetchingNextPage } =
@@ -15,8 +17,16 @@ export const YoutubeVideos = () => {
 		return <p>Something went down the shitter, please try again later!</p>
 	}
 
-	const shownData = pages?.reduce((arr: YTContentModel[], curr) => {
-		const videoItems = [...curr.items.map((el) => el.contentDetails)]
+	const shownData = pages?.reduce((arr: YTMergedObject[], curr) => {
+		const videoItems = [
+			...curr.items.map((el) => {
+				return {
+					...el.contentDetails,
+					thumbnails: el.snippet.thumbnails,
+					title: el.snippet.title
+				}
+			})
+		]
 
 		arr.push(...videoItems)
 
@@ -28,10 +38,10 @@ export const YoutubeVideos = () => {
 			<div className="main-content youtube flex .flex-column">
 				{isFetching && !pages && <Skeleton amount={5} classNames="youtube" />}
 				{shownData?.map(
-					({ videoId, videoPublishedAt }, idx) =>
+					({ videoId, videoPublishedAt, thumbnails }, idx) =>
 						videoPublishedAt &&
 						videoId && (
-							<VideoPlayer
+							<VideoThumbnail
 								currVideosAmount={shownData.length}
 								fetchNextPage={fetchNextPage}
 								key={videoId}
@@ -39,6 +49,7 @@ export const YoutubeVideos = () => {
 								idx={idx}
 								isFetching={isFetchingNextPage}
 								hasNextPage={hasNextPage}
+								thumbnails={thumbnails}
 							/>
 						)
 				)}
