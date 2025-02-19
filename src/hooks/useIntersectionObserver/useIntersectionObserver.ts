@@ -9,13 +9,9 @@ export const useIntersectionObserver = () => {
 		const callbackForObserver = (entries: IntersectionObserverEntry[]) => {
 			const [{ isIntersecting }] = entries
 
-			if (isIntersecting) {
-				setIntersecting(isIntersecting)
-			}
-			if (!isIntersecting) {
-				setIntersecting(isIntersecting)
-			}
+			setIntersecting(isIntersecting)
 		}
+
 		const { current } = ref
 		const observer = new IntersectionObserver(callbackForObserver)
 
