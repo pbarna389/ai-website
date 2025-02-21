@@ -1,6 +1,7 @@
 import { VideoThumbnail } from './components'
 
-import { Skeleton } from '@components'
+import { ErrorMessage, Skeleton } from '@components'
+import { errorMessages } from '@constants'
 import { useGetInfiniteScrollData } from '@hooks'
 
 import type { YoutubeModel } from '@types'
@@ -14,7 +15,7 @@ export const YoutubeVideos = () => {
 	const { pages } = data ? data : {}
 
 	if (error && !data?.pages) {
-		return <p>Something went down the shitter, please try again later!</p>
+		return <ErrorMessage text={errorMessages.youtube} />
 	}
 
 	const shownData = pages?.reduce((arr: YTMergedObject[], curr) => {

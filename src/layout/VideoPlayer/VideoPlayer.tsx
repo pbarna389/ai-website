@@ -55,7 +55,7 @@ export const VideoPlayer = () => {
 					<FaStopCircle size={100} onClick={handleStopClick} />
 				</>
 			) : (
-				<p>Please select a video to play!</p>
+				<p>Please select a video to play</p>
 			)}
 		</div>
 	)

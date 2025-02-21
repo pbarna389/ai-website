@@ -6,5 +6,6 @@ export {
 	INSTA_API_KEY,
 	INSTA_SITE,
 	pageLinks,
-	socialLinks
+	socialLinks,
+	errorMessages
 } from './constants'

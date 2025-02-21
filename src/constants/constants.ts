@@ -17,3 +17,8 @@ export const socialLinks: SocialLinksType = [
 	{ socialName: 'Facebook', link: 'https://www.facebook.com/ECybertunes' },
 	{ socialName: 'X', link: 'https://x.com/ECybertunes' }
 ]
+
+export const errorMessages = {
+	youtube: 'Something went wrong with the Youtube API, please try again later!',
+	instagram: 'Something went wrong with the Instagram API, please try again later!'
+}

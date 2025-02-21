@@ -1,6 +1,7 @@
 import { InstaContent } from './components'
 
-import { Skeleton } from '@components'
+import { ErrorMessage, Skeleton } from '@components'
+import { errorMessages } from '@constants'
 import { useGetInfiniteScrollData } from '@hooks'
 
 import type { InstaContentModel, InstaModel } from '@types'
@@ -13,8 +14,8 @@ export const InstagramData = () => {
 
 	const { pages } = data ? data : {}
 
-	if (!data && error) {
-		return <div>Something went down the shitter</div>
+	if (!pages && error) {
+		return <ErrorMessage text={errorMessages.instagram} />
 	}
 
 	const instaData = pages?.reduce((arr: InstaContentModel[], curr) => {

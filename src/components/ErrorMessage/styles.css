@@ -1,0 +1,37 @@
+:root {
+  --svg-dimensions: calc(100vw * 0.11);
+  --svg-dimensions-400px: calc(100vw * 0.25);
+
+  --error-fs: calc(100vw * 0.025);
+  --error-fs-400px: calc(100vw * 0.0648)
+}
+
+.page > .main-content.error {
+  align-items: center;
+
+  padding: 1rem;
+}
+
+.page > .main-content.youtube.error > p {
+  font-size: var(--error-fs);
+  text-wrap: wrap;
+}
+
+.page > .main-content.error > svg {
+  width: var(--svg-dimensions);
+  height: var(--svg-dimensions);
+}
+
+.page > .main-content.youtube.error > svg > path {
+  fill: red;
+}
+
+@media screen and (max-width: 400px) {
+  .page > .main-content.youtube.error > p {
+    font-size: var(--error-fs-400px);
+  }
+  .page > .main-content.error > svg {
+    width: var(--svg-dimensions-400px);
+    height: var(--svg-dimensions-400px);
+  }
+}
