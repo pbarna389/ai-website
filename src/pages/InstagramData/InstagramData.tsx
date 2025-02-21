@@ -42,6 +42,7 @@ export const InstagramData = () => {
 					/>
 				))}
 				{isFetchingNextPage && <Skeleton amount={6} classNames="instagram" />}
+				{error && <ErrorMessage text={errorMessages.instagram} />}
 			</div>
 		</div>
 	)

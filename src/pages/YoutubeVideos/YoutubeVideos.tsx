@@ -55,6 +55,7 @@ export const YoutubeVideos = () => {
 						)
 				)}
 				{isFetchingNextPage && <Skeleton amount={5} classNames="youtube" />}
+				{error && <ErrorMessage text={errorMessages.youtube} />}
 			</div>
 		</div>
 	)

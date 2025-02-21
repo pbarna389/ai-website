@@ -6,23 +6,23 @@
   --error-fs-400px: calc(100vw * 0.0648)
 }
 
-.page > .main-content.error {
+.page > .main-content > .error {
   align-items: center;
 
   padding: 1rem;
 }
 
-.page > .main-content.youtube.error > p {
+.page > .main-content > .error  p {
   font-size: var(--error-fs);
   text-wrap: wrap;
 }
 
-.page > .main-content.error > svg {
+.page > .main-content > .error > svg { 
   width: var(--svg-dimensions);
   height: var(--svg-dimensions);
 }
 
-.page > .main-content.youtube.error > svg > path {
+.page > .main-content > .error > svg > path {
   fill: red;
 }
 
