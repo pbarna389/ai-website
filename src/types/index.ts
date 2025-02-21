@@ -4,7 +4,9 @@ export type {
 	YTPageInfoModel,
 	InstaModel,
 	InstaPageInfo,
-	InstaContentModel
+	InstaContentModel,
+	YTSnippetModel,
+	YTThumbnailModel
 } from './models'
 
 export type { SocialPickTypes, PageLinksType, SocialLinksType } from './types'

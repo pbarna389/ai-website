@@ -1,0 +1,55 @@
+.videoPlayer {
+  transform: translate(0%, -50%);
+  position: fixed;
+  top: 35%;
+  
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  
+  width: 25%;
+  height: 40%;
+  right: calc(-25% - 1rem);
+
+  padding: 0.5rem;
+
+  background-color: black;
+  box-shadow: 0px 0px 10px black;
+
+  transition: right 0.25s ease-in-out, bottom 0.5s ease-in-out;
+
+  user-select: none;
+}
+
+.videoPlayer > .social-helper {
+  transform: translate(-25%,-50%);
+  top: 50%;
+}
+
+.videoPlayer:hover, .videoPlayer.activated {
+  right: 0;
+}
+
+.videoPlayer > svg {
+  cursor: pointer;
+}
+
+.videoPlayer > svg > path {
+  fill: rgba(255, 255, 255, 0.478);
+
+  transition: fill 0.25s ease-in-out;
+}
+
+.videoPlayer > svg:hover > path {
+  fill: white;
+}
+
+@media screen and (max-width: 768px) {
+  .videoPlayer {
+    top: 33.25%;
+    width: 50%;
+    height: 50%;
+
+    right: calc(-50% - 1rem);
+  }
+}

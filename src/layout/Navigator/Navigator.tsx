@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 
+import { FaArrowUp } from 'react-icons/fa'
+
 import { handleClick } from './helpers'
 import { widthChecker } from '@helpers'
-import { FaArrowUp } from 'react-icons/fa'
 
 import './styles.css'
 

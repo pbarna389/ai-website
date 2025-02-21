@@ -1,7 +1,8 @@
-import { socialLinks } from '@constants'
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import { FaRedditAlien } from 'react-icons/fa6'
+
+import { socialLinks } from '@constants'
 
 import { iconSize } from './constants'
 

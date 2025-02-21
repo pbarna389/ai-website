@@ -21,9 +21,6 @@ header.animated {
 header > img {
   position: absolute;
   top: 0;
-
-  
-  width: 25%;
 }
 
 @keyframes introLeftAnim {

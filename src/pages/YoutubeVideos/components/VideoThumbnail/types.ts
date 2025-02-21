@@ -4,7 +4,7 @@ import type {
 	InfiniteQueryObserverResult
 } from '@tanstack/react-query'
 
-import type { YoutubeModel } from '@types'
+import type { YoutubeModel, YTThumbnailModel } from '@types'
 
 export type VideoPlayerProps = {
 	currVideosAmount: number
@@ -15,4 +15,5 @@ export type VideoPlayerProps = {
 	idx: number
 	isFetching: boolean
 	link: string
+	thumbnails: YTThumbnailModel
 }

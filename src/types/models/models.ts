@@ -15,12 +15,40 @@ export type YTContentModel = {
 	videoPublishedAt?: string
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+enum ThumbnailNameEnum {
+	default,
+	medium,
+	high,
+	standard,
+	maxres
+}
+
+type ThumbnailTypes = keyof typeof ThumbnailNameEnum
+
+type ThumbnailDetails = {
+	height: number
+	url: string
+	width: number
+}
+
+export type YTThumbnailModel = {
+	[key in ThumbnailTypes]: ThumbnailDetails
+}
+
+export type YTSnippetModel = {
+	thumbnails: YTThumbnailModel
+	title: string
+	[key: string]: string | YTThumbnailModel
+}
+
 export type YTItemsModel = {
 	contentDetails: YTContentModel
 	etag: string
 	id: string
 	kind: string
-	[key: string]: string | YTContentModel
+	snippet: YTSnippetModel
+	[key: string]: string | YTContentModel | YTSnippetModel
 }
 
 export type YTPageInfoModel = {
@@ -34,7 +62,7 @@ export type InstaModel = {
 	paging: InstaPageInfo
 }
 
-type InstaMediaTypes = Uppercase<'video' | 'image' | 'canvas'>
+type InstaMediaTypes = Uppercase<'image' | 'canvas'>
 
 export type InstaContentModel = {
 	id: string

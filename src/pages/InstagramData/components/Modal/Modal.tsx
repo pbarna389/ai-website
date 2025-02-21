@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom'
 
-import { InstaCanvas, InstaPicture, InstaVideo } from './components'
+import { InstaCanvas, InstaPicture } from './components'
 
 import type { InstaContentModel } from '@types'
 
@@ -10,7 +10,6 @@ import './style.css'
 
 const ComponentSelector = (data: InstaContentModel) => {
 	return {
-		VIDEO: <InstaVideo data={data} />,
 		IMAGE: <InstaPicture data={data} />,
 		CANVAS: <InstaCanvas data={data} />
 	}

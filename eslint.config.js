@@ -132,6 +132,11 @@ export default tseslint
 								position: 'before'
 							},
 							{
+								pattern: 'react-icons/*',
+								group: 'builtin',
+								position: 'before'
+							},
+							{
 								pattern: '@storybook',
 								group: 'builtin',
 								position: 'before'

@@ -2,7 +2,9 @@ export type {
 	YoutubeModel,
 	YTPageInfoModel,
 	YTContentModel,
+	YTSnippetModel,
 	InstaModel,
 	InstaPageInfo,
-	InstaContentModel
+	InstaContentModel,
+	YTThumbnailModel
 } from './models'
