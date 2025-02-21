@@ -17,6 +17,13 @@ body.scrollbar-disabled {
   overflow: hidden;
 }
 
+body > #root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  gap: 0;
+}
 
 .flex {
   display: flex;
@@ -45,6 +52,9 @@ body.scrollbar-disabled {
   justify-content: space-between;
 }
 
+.no-select {
+  user-select: none;
+}
 
 .page {
   margin: 2rem 4rem;

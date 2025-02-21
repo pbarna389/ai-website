@@ -21,7 +21,7 @@ export const Header = () => {
 	handleIntro()
 
 	return (
-		<header className={`flex ${isIntroFinished ? 'animated' : 'intro'}`}>
+		<header className={`flex no-select ${isIntroFinished ? 'animated' : 'intro'}`}>
 			<img className={`img left first ${isIntroFinished && 'animated'}`} src={girl1} />
 			<img className={`img left second ${isIntroFinished ? 'animated' : 'intro-anim'}`} src={girl2} />
 			<Logo isIntroFinished={isIntroFinished} width={600} height={158} />

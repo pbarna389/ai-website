@@ -42,7 +42,7 @@ export const VideoThumbnail = ({
 	return (
 		<div
 			ref={ref && ref}
-			className={`trans-opacity ${isInView ? 'shown' : 'hidden'}`}
+			className={`thumbnail trans-opacity ${isInView ? 'shown' : 'hidden'}`}
 			onClick={handleClick}
 		>
 			<img src={maxres.url} />
