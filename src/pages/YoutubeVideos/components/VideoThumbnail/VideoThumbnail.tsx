@@ -30,15 +30,13 @@ export const VideoThumbnail = ({
 	}, [isInView, idx, currVideosAmount, hasNextPage, isFetching, fetchNextPage])
 
 	const handleClick = () => {
-		if (videoState.link !== link) {
-			prevVideoId.current = videoState.link
+		prevVideoId.current = videoState.link
 
-			videoSetter({
-				type: 'Youtube',
-				isPlaying: true,
-				link
-			})
-		}
+		videoSetter({
+			type: 'Youtube',
+			isPlaying: true,
+			link
+		})
 	}
 
 	return (

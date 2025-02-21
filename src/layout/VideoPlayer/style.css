@@ -7,9 +7,11 @@
   justify-content: center;
   gap: 0.5rem;
   
-  width: 25%;
-  height: 40%;
-  right: calc(-25% - 1rem);
+  width: 35%;
+  min-height: max-content;
+  max-height: 40%;
+  height: 100%;
+  right: calc(-35% - 1rem);
 
   padding: 0.5rem;
 
@@ -19,6 +21,7 @@
   transition: right 0.25s ease-in-out, bottom 0.5s ease-in-out;
 
   user-select: none;
+  z-index: 10;
 }
 
 .videoPlayer > .social-helper {

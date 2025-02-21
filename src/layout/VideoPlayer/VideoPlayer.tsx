@@ -31,7 +31,7 @@ export const VideoPlayer = () => {
 		if (prevVideoId.current !== link && link !== null) {
 			const timeout = setTimeout(() => {
 				setIsStarted(false)
-			}, 5000)
+			}, 1500)
 
 			return () => clearTimeout(timeout)
 		}
