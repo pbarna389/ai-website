@@ -24,9 +24,8 @@
 }
 
 .navigator.invisible {
-  top: 30vh;
   opacity: 0;
-  z-index: 0;
+  z-index: -1;
 }
 
 
@@ -47,7 +46,13 @@
 }
 
 .navigator.aroundBottom {
-  top: 70.5vh;
+  top: calc(100% - ((4.5rem + 109.09px) + var(----copyright-main-fs) + var(--copyright-sec-fs)));
+}
+
+@media screen and (min-width: 2350px) {
+  .navigator.aroundBottom {
+    top: calc(100% - ((5.2rem + 109.09px) + var(----copyright-main-fs) + var(--copyright-sec-fs)));
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -56,10 +61,24 @@
     height: 30px;
 
     left: 0rem;
-    top: 90vh;
+    top: 85%;
   }
 
   .navigator.aroundBottom {
-    top: 68.5vh;
+    top: calc(100% - ((3.5rem + 109.09px) + var(--logo-height-768px) + var(--copyright-main-fs-768px) + var(--copyright-sec-fs-768px) + 25px));
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navigator {
+    width: 30px;  
+    height: 30px;
+
+    left: 0rem;
+    top: 85%;
+  }
+
+  .navigator.aroundBottom {
+    top: calc(100% - ((3.5rem + 109.09px) + var(--logo-height-400px) + var(--copyright-main-fs-400px) + var(--copyright-sec-fs-400px) + 20px));
   }
 }

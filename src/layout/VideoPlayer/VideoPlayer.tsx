@@ -29,7 +29,7 @@ export const VideoPlayer = () => {
 
 	if (videoState.isPlaying) {
 		return (
-			<div className={`flex flex-column videoPlayer ${onBottom && 'invisible'}`}>
+			<div className={`flex flex-column flex-nowrap videoPlayer ${onBottom && 'invisible'}`}>
 				<div className="social-helper" />
 				{link && type && ComponentSelector(link)[type]}
 				<FaStopCircle size={100} onClick={handleClick} />
