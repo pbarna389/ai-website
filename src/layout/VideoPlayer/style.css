@@ -26,7 +26,7 @@
   top: 50%;
 }
 
-.videoPlayer:hover {
+.videoPlayer:hover, .videoPlayer.activated {
   right: 0;
 }
 

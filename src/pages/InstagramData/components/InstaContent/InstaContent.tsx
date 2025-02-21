@@ -42,6 +42,7 @@ export const InstaContent = ({
 		videoSetter(() => {
 			return {
 				isPlaying: true,
+				isStarted: true,
 				link: media_url,
 				type: 'Instagram'
 			}

@@ -9,6 +9,7 @@ export type VideoStateType = {
 }
 
 export type VideoContextType = {
+	prevVideoId: React.MutableRefObject<string | null>
 	videoSetter: Dispatch<SetStateAction<VideoStateType>>
 	videoState: VideoStateType
 }

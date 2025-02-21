@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 
 import { VideoContext } from '../VideoContext'
 
@@ -13,7 +13,12 @@ const initialState = {
 export const VideoContextProvider = ({ children }: React.PropsWithChildren) => {
 	const [data, setData] = useState<VideoStateType>(initialState)
 
-	const contextValue = useMemo(() => ({ videoState: data, videoSetter: setData }), [data, setData])
+	const prevVideoId = useRef<string | null>(null)
+
+	const contextValue = useMemo(
+		() => ({ videoState: data, videoSetter: setData, prevVideoId }),
+		[data, setData]
+	)
 
 	return <VideoContext.Provider value={contextValue}>{children}</VideoContext.Provider>
 }

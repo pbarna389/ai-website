@@ -46,12 +46,12 @@
 }
 
 .navigator.aroundBottom {
-  top: calc(100% - ((4.5rem + 109.09px) + var(----copyright-main-fs) + var(--copyright-sec-fs)));
+  top: calc(100% - ((4.5rem + 109.09px) + var(--copyright-main-fs) + var(--copyright-sec-fs)));
 }
 
 @media screen and (min-width: 2350px) {
   .navigator.aroundBottom {
-    top: calc(100% - ((5.2rem + 109.09px) + var(----copyright-main-fs) + var(--copyright-sec-fs)));
+    top: calc(100% - ((5.2rem + 109.09px) + var(--copyright-main-fs) + var(--copyright-sec-fs)));
   }
 }
 

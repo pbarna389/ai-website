@@ -1,3 +1,5 @@
+/* eslint-disable @eslint-react/hooks-extra/no-direct-set-state-in-use-effect */
+import { useEffect, useState } from 'react'
 import { FaStopCircle } from 'react-icons/fa'
 
 import { InstaVideo, YoutubeIFrame } from './components'
@@ -15,13 +17,26 @@ const ComponentSelector = (link: string) => {
 }
 
 export const VideoPlayer = () => {
-	const { videoState, videoSetter } = useVideoContext()
+	const [isStarted, setIsStarted] = useState<boolean>(false)
+
+	const { videoState, videoSetter, prevVideoId } = useVideoContext()
+	const { link, type, isPlaying } = videoState
 
 	const onBottom = useBottomChecker()
 
-	const { link, type } = videoState
+	useEffect(() => {
+		setIsStarted(true)
+		if (isPlaying && prevVideoId.current !== link) {
+			const timeout = setTimeout(() => {
+				setIsStarted(false)
+			}, 5000)
 
-	const handleClick = () => {
+			return () => clearTimeout(timeout)
+		}
+	}, [isPlaying, link, prevVideoId])
+
+	const handleStopClick = () => {
+		prevVideoId.current = null
 		videoSetter(() => {
 			return { link: null, isPlaying: false, type: null }
 		})
@@ -29,10 +44,12 @@ export const VideoPlayer = () => {
 
 	if (videoState.isPlaying) {
 		return (
-			<div className={`flex flex-column flex-nowrap videoPlayer ${onBottom && 'invisible'}`}>
+			<div
+				className={`flex flex-column flex-nowrap videoPlayer ${onBottom && 'invisible'} ${isStarted && 'activated'}`}
+			>
 				<div className="social-helper" />
 				{link && type && ComponentSelector(link)[type]}
-				<FaStopCircle size={100} onClick={handleClick} />
+				<FaStopCircle size={100} onClick={handleStopClick} />
 			</div>
 		)
 	}

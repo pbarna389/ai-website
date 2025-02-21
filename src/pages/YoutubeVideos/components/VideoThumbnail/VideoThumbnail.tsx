@@ -16,7 +16,7 @@ export const VideoThumbnail = ({
 	fetchNextPage,
 	thumbnails
 }: VideoPlayerProps) => {
-	const { videoSetter } = useVideoContext()
+	const { videoState, videoSetter, prevVideoId } = useVideoContext()
 	const { ref, isInView } = useIntersectionObserver()
 
 	const { maxres } = thumbnails
@@ -30,11 +30,15 @@ export const VideoThumbnail = ({
 	}, [isInView, idx, currVideosAmount, hasNextPage, isFetching, fetchNextPage])
 
 	const handleClick = () => {
-		videoSetter({
-			type: 'Youtube',
-			isPlaying: true,
-			link
-		})
+		if (videoState.link !== link) {
+			prevVideoId.current = videoState.link
+
+			videoSetter({
+				type: 'Youtube',
+				isPlaying: true,
+				link
+			})
+		}
 	}
 
 	return (
