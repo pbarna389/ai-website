@@ -20,7 +20,7 @@ export const VideoPlayer = () => {
 	const [isStarted, setIsStarted] = useState<boolean>(false)
 
 	const { videoState, videoSetter, prevVideoId } = useVideoContext()
-	const { link, type } = videoState
+	const { link, type, isPlaying } = videoState
 
 	const onBottom = useBottomChecker()
 
@@ -49,8 +49,14 @@ export const VideoPlayer = () => {
 			className={`flex flex-column flex-nowrap videoPlayer ${onBottom && 'invisible'} ${isStarted && 'activated'}`}
 		>
 			<div className="social-helper" />
-			{link && type && ComponentSelector(link)[type]}
-			<FaStopCircle size={100} onClick={handleStopClick} />
+			{isPlaying ? (
+				<>
+					{link && type && ComponentSelector(link)[type]}
+					<FaStopCircle size={100} onClick={handleStopClick} />
+				</>
+			) : (
+				<p>Please select a video to play!</p>
+			)}
 		</div>
 	)
 }
