@@ -20,20 +20,22 @@ export const VideoPlayer = () => {
 	const [isStarted, setIsStarted] = useState<boolean>(false)
 
 	const { videoState, videoSetter, prevVideoId } = useVideoContext()
-	const { link, type, isPlaying } = videoState
+	const { link, type } = videoState
 
 	const onBottom = useBottomChecker()
 
 	useEffect(() => {
-		setIsStarted(true)
-		if (isPlaying && prevVideoId.current !== link) {
+		const starterState = link !== null
+
+		setIsStarted(starterState)
+		if (prevVideoId.current !== link && link !== null) {
 			const timeout = setTimeout(() => {
 				setIsStarted(false)
 			}, 5000)
 
 			return () => clearTimeout(timeout)
 		}
-	}, [isPlaying, link, prevVideoId])
+	}, [link, prevVideoId])
 
 	const handleStopClick = () => {
 		prevVideoId.current = null
@@ -42,15 +44,13 @@ export const VideoPlayer = () => {
 		})
 	}
 
-	if (videoState.isPlaying) {
-		return (
-			<div
-				className={`flex flex-column flex-nowrap videoPlayer ${onBottom && 'invisible'} ${isStarted && 'activated'}`}
-			>
-				<div className="social-helper" />
-				{link && type && ComponentSelector(link)[type]}
-				<FaStopCircle size={100} onClick={handleStopClick} />
-			</div>
-		)
-	}
+	return (
+		<div
+			className={`flex flex-column flex-nowrap videoPlayer ${onBottom && 'invisible'} ${isStarted && 'activated'}`}
+		>
+			<div className="social-helper" />
+			{link && type && ComponentSelector(link)[type]}
+			<FaStopCircle size={100} onClick={handleStopClick} />
+		</div>
+	)
 }
