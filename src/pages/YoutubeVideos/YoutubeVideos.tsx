@@ -14,8 +14,14 @@ export const YoutubeVideos = () => {
 
 	const { pages } = data ? data : {}
 
-	if (error && !data?.pages) {
-		return <ErrorMessage text={errorMessages.youtube} />
+	if (error && !pages) {
+		return (
+			<div className="page">
+				<div className="main-content flex .flex-column">
+					<ErrorMessage text={errorMessages.youtube} />
+				</div>
+			</div>
+		)
 	}
 
 	const shownData = pages?.reduce((arr: YTMergedObject[], curr) => {

@@ -15,7 +15,13 @@ export const InstagramData = () => {
 	const { pages } = data ? data : {}
 
 	if (!pages && error) {
-		return <ErrorMessage text={errorMessages.instagram} />
+		return (
+			<div className="page">
+				<div className="main-content flex .flex-column">
+					<ErrorMessage text={errorMessages.instagram} />
+				</div>
+			</div>
+		)
 	}
 
 	const instaData = pages?.reduce((arr: InstaContentModel[], curr) => {
