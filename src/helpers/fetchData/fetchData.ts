@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import {
 	INSTA_ACCESS_TOKEN,
 	INSTA_API_KEY,
@@ -15,8 +14,6 @@ export const fetchData = async <DataT>(queryName: string, pageParam: string): Pr
 			: `${INSTA_SITE}${INSTA_API_KEY}/media?fields=id,media_url,media_type,thumbnail_url&limit=6&access_token=${INSTA_ACCESS_TOKEN}${pageParam && `&after=${pageParam}`}`
 
 	const incomingData = await fetch(fullUrl)
-
-	console.log(fullUrl)
 
 	const data: Promise<DataT> = await incomingData.json()
 
