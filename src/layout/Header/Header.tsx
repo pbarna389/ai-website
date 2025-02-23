@@ -22,11 +22,27 @@ export const Header = () => {
 
 	return (
 		<header className={`flex no-select ${isIntroFinished ? 'animated' : 'intro'}`}>
-			<img className={`img left first ${isIntroFinished && 'animated'}`} src={girl1} />
-			<img className={`img left second ${isIntroFinished ? 'animated' : 'intro-anim'}`} src={girl2} />
+			<img
+				className={`img left first ${isIntroFinished && 'animated'}`}
+				src={girl1}
+				alt={'Header left girl one'}
+			/>
+			<img
+				className={`img left second ${isIntroFinished ? 'animated' : 'intro-anim'}`}
+				src={girl2}
+				alt={'Header left girl two'}
+			/>
 			<Logo isIntroFinished={isIntroFinished} width={600} height={158} />
-			<img className={`img right first ${isIntroFinished && 'animated'}`} src={girl3} />
-			<img className={`img right second ${isIntroFinished ? 'animated' : 'intro-anim'}`} src={girl4} />
+			<img
+				className={`img right first ${isIntroFinished && 'animated'}`}
+				src={girl3}
+				alt={'Header right girl one'}
+			/>
+			<img
+				className={`img right second ${isIntroFinished ? 'animated' : 'intro-anim'}`}
+				src={girl4}
+				alt={'Header right girl two'}
+			/>
 		</header>
 	)
 }

@@ -24,10 +24,13 @@ nav > ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  list-style-type: none;
+
   gap: 1rem;
   margin: 0.1rem;
   font-size: calc(100vw * 0.014);
   padding: 0;
+
   
   transition: margin 0.2s ease-in-out, font-size 0.2s ease-in;
 }
@@ -37,7 +40,7 @@ nav > ul.top, nav > ul:hover {
   font-size: calc(100vw * 0.02);
 }
 
-nav > ul > div > a {
+nav > ul > li > a {
   font-weight: 600;
   font-style: italic;
 
@@ -47,7 +50,7 @@ nav > ul > div > a {
   opacity: 0.5;
 }
 
-nav > ul > div > a:hover {
+nav > ul > li > a:hover {
   opacity: 1;
 }
 
@@ -61,7 +64,7 @@ nav > ul > div > a:hover {
     font-size: calc(100vw * 0.06)
   }  
 
-  nav > ul > div > a {
+  nav > ul > li > a {
     opacity: 0.8;
   }
 }
@@ -80,7 +83,7 @@ nav > ul > div > a:hover {
     font-size: calc(100vw * 0.10)
   } 
 
-  nav > ul > div > a {
+  nav > ul > li > a {
     opacity: 9;
   }
 }

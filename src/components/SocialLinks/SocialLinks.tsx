@@ -28,6 +28,7 @@ export const SocialLinks = () => {
 					key={`social-link-${link}`}
 					href={`${link}`}
 					target="_blank"
+					aria-label={socialName}
 				>
 					{socials[socialName]}
 				</a>

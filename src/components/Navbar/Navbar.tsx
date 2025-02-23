@@ -25,11 +25,11 @@ export const Navbar = () => {
 		<nav className="trans-opacity">
 			<ul className={`${isOnTop && 'top'}`}>
 				{pageLinks.map((el) => (
-					<div key={el} onClick={scrollToTop}>
+					<li key={el} onClick={scrollToTop}>
 						<NavLink className={'font-teko trans-opacity'} to={el.toLocaleLowerCase()}>
 							{el}
 						</NavLink>
-					</div>
+					</li>
 				))}
 			</ul>
 		</nav>
