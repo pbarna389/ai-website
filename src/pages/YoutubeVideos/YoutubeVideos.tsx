@@ -42,7 +42,7 @@ export const YoutubeVideos = () => {
 
 	return (
 		<div className="page">
-			<div className="main-content youtube flex .flex-column">
+			<div className="main-content youtube flex">
 				{isFetching && !pages && <Skeleton amount={5} classNames="youtube" />}
 				{shownData?.map(
 					({ videoId, videoPublishedAt, thumbnails }, idx) =>
