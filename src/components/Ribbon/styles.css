@@ -1,7 +1,7 @@
 /* HTML: <div class="ribbon">Your text content</div> */
 .ribbon {
   position: absolute;
-  z-index: 3;
+  z-index: 2;
   top: 0;
   width: 100%;
 

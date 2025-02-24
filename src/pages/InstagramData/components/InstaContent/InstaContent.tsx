@@ -41,6 +41,8 @@ export const InstaContent = ({
 
 	const ribbonText = textConverter(media_type)
 
+	const handleActivation = media_url === link || modalOpen
+
 	return (
 		<div className="thumbnail-wrapper">
 			<div
@@ -56,7 +58,7 @@ export const InstaContent = ({
 			>
 				<Ribbon text={ribbonText} />
 				<img
-					className={`${isInView ? 'shown' : 'hidden'} ${media_url === link && 'selected'}`}
+					className={`${isInView ? 'shown' : 'hidden'} ${handleActivation && 'selected'}`}
 					ref={ref && ref}
 					src={decideImgUrl}
 					alt={'thumbnail for instagram - PICTURE DESC WILL COME HERE'}
