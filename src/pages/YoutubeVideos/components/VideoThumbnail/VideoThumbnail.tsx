@@ -5,8 +5,6 @@ import { useIntersectionObserver } from '@hooks'
 
 import type { VideoPlayerProps } from './types'
 
-import './styles.css'
-
 export const VideoThumbnail = ({
 	link,
 	idx,
@@ -45,7 +43,11 @@ export const VideoThumbnail = ({
 			className={`thumbnail trans-opacity ${isInView ? 'shown' : 'hidden'}`}
 			onClick={handleClick}
 		>
-			<img src={maxres.url} alt={`thumbnail - ${idx}}`} />
+			<img
+				src={maxres.url}
+				className={`${videoState.link === link && 'selected'}`}
+				alt={`thumbnail - ${idx}}`}
+			/>
 		</div>
 	)
 }
