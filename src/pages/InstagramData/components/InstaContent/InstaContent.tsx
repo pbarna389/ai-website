@@ -9,8 +9,6 @@ import { useIntersectionObserver } from '@hooks'
 
 import type { InstaPicturesProps } from './types'
 
-import './styles.css'
-
 export const InstaContent = ({
 	data,
 	currVideosAmount,
@@ -20,10 +18,11 @@ export const InstaContent = ({
 	idx
 }: InstaPicturesProps) => {
 	const [modalOpen, setModalOpen] = useState<boolean>(false)
-	const { videoSetter } = useVideoContext()
+	const { videoState, videoSetter } = useVideoContext()
 
 	const { ref, isInView } = useIntersectionObserver()
 
+	const { link } = videoState
 	const { thumbnail_url, media_url, media_type } = data
 
 	useEffect(() => {
@@ -51,9 +50,9 @@ export const InstaContent = ({
 
 	return (
 		<>
-			<div className="insta-img-wrapper">
+			<div className="thumbnail">
 				<img
-					className={`${isInView ? 'shown' : 'hidden'}`}
+					className={`${isInView ? 'shown' : 'hidden'} ${media_url === link && 'selected'}`}
 					ref={ref && ref}
 					src={decideImgUrl}
 					onClick={() => (shouldModalCalled ? handleModalState(setModalOpen, modalOpen) : handleVideo())}
