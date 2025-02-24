@@ -59,6 +59,7 @@ export const InstaContent = ({
 					className={`${isInView ? 'shown' : 'hidden'} ${media_url === link && 'selected'}`}
 					ref={ref && ref}
 					src={decideImgUrl}
+					alt={'thumbnail for instagram - PICTURE DESC WILL COME HERE'}
 				/>
 			</div>
 			{modalOpen && shouldModalCalled && (
