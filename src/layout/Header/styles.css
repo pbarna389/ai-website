@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  height: 15.5rem;
+  height: var(--navbar-top-base);
   
   margin: 0;
 
@@ -428,7 +428,7 @@ img.right.second.animated {
 }
 @media screen and (max-width: 400px) and (min-width: 280px) {
   header {
-    height: 14rem;
+    height: var(--navbar-top-mobile);
   }
   header > img {
     top: calc(0px + calc(100vw * 0.44));

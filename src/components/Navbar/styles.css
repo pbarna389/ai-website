@@ -19,7 +19,7 @@ nav {
 }
 
 nav.top {
-  top: 15.5rem;
+  top: var(--navbar-top-base);
 }
 
 nav:hover {
@@ -96,6 +96,6 @@ nav > ul > li > a:hover {
 
 @media screen and (max-width: 400px) {
   nav.top {
-    top: 14rem 
+    top: var(--navbar-top-mobile);
   }
 }
