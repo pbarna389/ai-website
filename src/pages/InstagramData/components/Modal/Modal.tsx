@@ -18,7 +18,9 @@ const ComponentSelector = (data: InstaContentModel) => {
 export const Modal = ({ modalState, setModal, callback, data }: ModalProps) => {
 	return createPortal(
 		<>
-			<div className="modal" onClick={() => callback(setModal, modalState)} />
+			<div className="modal" onClick={() => callback(setModal, modalState)}>
+				<button type="button" className="close" />
+			</div>
 			{ComponentSelector(data)[data.media_type]}
 		</>,
 		document.body
