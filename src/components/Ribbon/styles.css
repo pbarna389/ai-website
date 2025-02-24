@@ -2,9 +2,11 @@
 .ribbon {
   position: absolute;
   z-index: 3;
-  top: 20px;
+  top: 0;
+  width: 100%;
 
-  text-transform: capitalize;
+  text-align: center;
+
   user-select: none;
   cursor: pointer;
 
@@ -12,7 +14,7 @@
   font-weight: bold;
   color: #fff;
 
-  padding-inline: .25em;
-  line-height: 1.8;
-  background: #FA6900;
+  padding: 0.5rem 0;
+
+  background: rgba(0, 0, 170, 0.543);
 }
