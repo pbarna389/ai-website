@@ -11,7 +11,8 @@ import './style.css'
 const ComponentSelector = (data: InstaContentModel) => {
 	return {
 		IMAGE: <InstaPicture data={data} />,
-		CANVAS: <InstaCanvas data={data} />
+		CANVAS: <InstaCanvas data={data} />,
+		VIDEO: null
 	}
 }
 

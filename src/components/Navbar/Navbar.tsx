@@ -13,7 +13,9 @@ export const Navbar = () => {
 
 	useEffect(() => {
 		const checkScrollbarOnTop = () => {
-			setIsOnTop(window.scrollY === 0)
+			const treshold = window.scrollY >= 400 ? 310 : 280
+
+			setIsOnTop(window.scrollY <= treshold)
 		}
 
 		window.addEventListener('scroll', checkScrollbarOnTop)
@@ -25,7 +27,7 @@ export const Navbar = () => {
 
 	return (
 		<nav className={`${checkForTop} trans-opacity`}>
-			<ul className={`${checkForTop && 'top'}`}>
+			<ul className={`${checkForTop}`}>
 				{pageLinks.map((el) => (
 					<li key={el} onClick={scrollToTop}>
 						<NavLink className={'font-teko trans-opacity'} to={el.toLocaleLowerCase()}>

@@ -62,7 +62,7 @@ export type InstaModel = {
 	paging: InstaPageInfo
 }
 
-type InstaMediaTypes = Uppercase<'image' | 'canvas'>
+export type InstaMediaTypes = Uppercase<'image' | 'canvas' | 'video'>
 
 export type InstaContentModel = {
 	id: string

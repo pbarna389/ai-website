@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 
+import { Ribbon } from '@components'
 import { useVideoContext } from '@context'
+import { handleVideoStart } from '@helpers'
 import { useIntersectionObserver } from '@hooks'
 
 import type { VideoPlayerProps } from './types'
@@ -27,27 +29,24 @@ export const VideoThumbnail = ({
 		}
 	}, [isInView, idx, currVideosAmount, hasNextPage, isFetching, fetchNextPage])
 
-	const handleClick = () => {
-		prevVideoId.current = videoState.link
-
-		videoSetter({
-			type: 'Youtube',
-			isPlaying: true,
-			link
-		})
-	}
-
 	return (
 		<div
-			ref={ref && ref}
-			className={`thumbnail trans-opacity ${isInView ? 'shown' : 'hidden'}`}
-			onClick={handleClick}
+			className="thumbnail-wrapper"
+			onClick={() =>
+				handleVideoStart(
+					{ currentLink: videoState.link, newLink: link, prevVideo: prevVideoId, videoSetter },
+					'Youtube'
+				)
+			}
 		>
-			<img
-				src={maxres.url}
-				className={`${videoState.link === link && 'selected'}`}
-				alt={`thumbnail - ${idx}}`}
-			/>
+			<div ref={ref && ref} className={`thumbnail trans-opacity ${isInView ? 'shown' : 'hidden'}`}>
+				<Ribbon text={'video'} />
+				<img
+					src={maxres.url}
+					className={`${videoState.link === link && 'selected'}`}
+					alt={`thumbnail - ${idx}}`}
+				/>
+			</div>
 		</div>
 	)
 }

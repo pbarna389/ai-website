@@ -17,7 +17,7 @@
   height: 101vh;
 
   backdrop-filter: blur(10px);
-  z-index: 4;
+  z-index: 10;
 }
 
 .instaContent {
@@ -26,7 +26,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  z-index: 4;
+  z-index: 11;
 }
 
 

@@ -6,5 +6,6 @@ export type {
 	InstaModel,
 	InstaPageInfo,
 	InstaContentModel,
+	InstaMediaTypes,
 	YTThumbnailModel
 } from './models'
