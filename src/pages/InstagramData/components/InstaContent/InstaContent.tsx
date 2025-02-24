@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 
-import { handleModalState } from './utils'
+import { handleModalState, textConverter } from './utils'
 
 import { Modal } from '../Modal'
 
+import { Ribbon } from '@components'
 import { useVideoContext } from '@context'
+import { handleVideoStart } from '@helpers'
 import { useIntersectionObserver } from '@hooks'
 
 import type { InstaPicturesProps } from './types'
@@ -18,7 +20,7 @@ export const InstaContent = ({
 	idx
 }: InstaPicturesProps) => {
 	const [modalOpen, setModalOpen] = useState<boolean>(false)
-	const { videoState, videoSetter } = useVideoContext()
+	const { videoState, videoSetter, prevVideoId } = useVideoContext()
 
 	const { ref, isInView } = useIntersectionObserver()
 
@@ -37,30 +39,31 @@ export const InstaContent = ({
 
 	const shouldModalCalled = media_type === 'IMAGE' || media_type === 'CANVAS'
 
-	const handleVideo = () => {
-		videoSetter(() => {
-			return {
-				isPlaying: true,
-				isStarted: true,
-				link: media_url,
-				type: 'Instagram'
-			}
-		})
-	}
+	const ribbonText = textConverter(media_type)
 
 	return (
-		<>
-			<div className="thumbnail">
+		<div className="thumbnail-wrapper">
+			<div
+				className="thumbnail"
+				onClick={() =>
+					shouldModalCalled
+						? handleModalState(setModalOpen, modalOpen)
+						: handleVideoStart(
+								{ currentLink: link, newLink: media_url, prevVideo: prevVideoId, videoSetter },
+								'Instagram'
+							)
+				}
+			>
+				<Ribbon text={ribbonText} />
 				<img
 					className={`${isInView ? 'shown' : 'hidden'} ${media_url === link && 'selected'}`}
 					ref={ref && ref}
 					src={decideImgUrl}
-					onClick={() => (shouldModalCalled ? handleModalState(setModalOpen, modalOpen) : handleVideo())}
 				/>
 			</div>
 			{modalOpen && shouldModalCalled && (
 				<Modal data={data} callback={handleModalState} modalState={modalOpen} setModal={setModalOpen} />
 			)}
-		</>
+		</div>
 	)
 }

@@ -1,0 +1,18 @@
+/* HTML: <div class="ribbon">Your text content</div> */
+.ribbon {
+  position: absolute;
+  z-index: 3;
+  top: 20px;
+
+  text-transform: capitalize;
+  user-select: none;
+  cursor: pointer;
+
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+
+  padding-inline: .25em;
+  line-height: 1.8;
+  background: #FA6900;
+}

@@ -6,7 +6,8 @@ export type {
 	InstaPageInfo,
 	InstaContentModel,
 	YTSnippetModel,
-	YTThumbnailModel
+	YTThumbnailModel,
+	InstaMediaTypes
 } from './models'
 
 export type { SocialPickTypes, PageLinksType, SocialLinksType } from './types'

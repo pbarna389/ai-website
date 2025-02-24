@@ -10,16 +10,12 @@ nav {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.184);
   backdrop-filter:blur(2px);
 
-  z-index: 3;
+  z-index: 4;
   user-select: none;
 
   opacity: 0.75;
 
   transition: top 0.25s ease-in-out;
-}
-
-nav.top {
-  top: var(--navbar-top-base);
 }
 
 nav:hover {
@@ -34,7 +30,7 @@ nav > ul {
 
   gap: 1rem;
   margin: 0.1rem;
-  font-size: calc(100vw * 0.014);
+  font-size: calc(100vw * 0.02);
   padding: 0;
 
   
@@ -43,7 +39,7 @@ nav > ul {
 
 nav > ul.top, nav > ul:hover {
   margin: 0.5rem;
-  font-size: calc(100vw * 0.02);
+  font-size: calc(100vw * 0.025);
 }
 
 nav > ul > li > a {
@@ -53,7 +49,7 @@ nav > ul > li > a {
   color: white;
   text-decoration: none;
 
-  opacity: 0.5;
+  opacity: 0.85;
 }
 
 nav > ul > li > a:hover {
@@ -91,11 +87,5 @@ nav > ul > li > a:hover {
 
   nav > ul > li > a {
     opacity: 9;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  nav.top {
-    top: var(--navbar-top-mobile);
   }
 }

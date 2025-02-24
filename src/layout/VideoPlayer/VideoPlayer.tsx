@@ -28,7 +28,7 @@ export const VideoPlayer = () => {
 		const starterState = link !== null
 
 		setIsStarted(starterState)
-		if (prevVideoId.current !== link && link !== null) {
+		if (prevVideoId.current !== link && starterState) {
 			const timeout = setTimeout(() => {
 				setIsStarted(false)
 			}, 1500)
@@ -39,6 +39,7 @@ export const VideoPlayer = () => {
 
 	const handleStopClick = () => {
 		prevVideoId.current = null
+
 		videoSetter(() => {
 			return { link: null, isPlaying: false, type: null }
 		})

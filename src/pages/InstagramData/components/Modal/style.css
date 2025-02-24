@@ -1,3 +1,10 @@
+.modal > button[type="button"] {
+  --main-color: black;
+  --hover-color: white;
+
+  --close-btn-dimensions: 3px;
+}
+
 .modal {
   position: fixed;
   display: flex;
@@ -6,11 +13,11 @@
   top: 50%;
   left: 50%;
 
-  width: 100%;
-  height: 100%;
+  width: 101vw;
+  height: 101vh;
 
   backdrop-filter: blur(10px);
-  z-index: 4;
+  z-index: 10;
 }
 
 .instaContent {
@@ -19,7 +26,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  z-index: 4;
+  z-index: 11;
 }
 
 
@@ -33,6 +40,57 @@ img.instaContent {
   width: 50%;
 }
 
+.modal > button[type="button"] {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  z-index: 2;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  padding: 0.5rem;
+
+  border-radius: 50%;
+
+  border: var(--close-btn-dimensions) solid;
+  border-color: var(--main-color);
+  background: none;
+
+  transition: border-color 0.15s ease-in-out;
+}
+
+.modal > button[type="button"]::before, .modal > button[type="button"]::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+
+  top: 50%;
+  left: 50%;
+
+  width: var(--close-btn-dimensions);
+  height: 2rem;
+
+  transition: background-color 0.15s ease-in-out;
+
+  background-color: var(--main-color);
+}
+
+.modal > button[type="button"]::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.modal > button[type="button"]::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.modal > button[type="button"]:hover {
+  border-color: var(--hover-color);
+}
+
+.modal > button[type="button"]:hover::before, .modal > button[type="button"]:hover::after {
+  background-color: var(--hover-color);
+}
 
 @media screen and (min-width: 1700px) {
   .instaContent {
@@ -59,49 +117,4 @@ img.instaContent {
     left: 84%;
     transform: translate(-68%, -50%);
   }
-}
-
-.modal > button[type="button"] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 2;
-
-  width: 1.5rem;
-  height: 1.5rem;
-
-  border: none;
-  background: none;
-}
-
-.modal > button[type="button"]::before {
-  content: '';
-
-  position: absolute;
-  z-index: 2;
-  
-  transform: translate(-50%, -50%) rotate(45deg);
-  top: 50%;
-  left: 50%;
-
-  width: 4px;
-  height: 2rem;
-
-  background-color: black;
-}
-
-.modal > button[type="button"]::after {
-  content: '';
-
-  position: absolute;
-  z-index: 2;
-  
-  transform: translate(-50%, -50%) rotate(-45deg);
-  top: 50%;
-  left: 50%;
-
-  width: 4px;
-  height: 2rem;
-
-  background-color: black;
 }
