@@ -21,9 +21,11 @@ export const Navbar = () => {
 		return () => window.removeEventListener('scroll', checkScrollbarOnTop)
 	}, [])
 
+	const checkForTop = isOnTop ? 'top' : ''
+
 	return (
-		<nav className="trans-opacity">
-			<ul className={`${isOnTop && 'top'}`}>
+		<nav className={`${checkForTop} trans-opacity`}>
+			<ul className={`${checkForTop && 'top'}`}>
 				{pageLinks.map((el) => (
 					<li key={el} onClick={scrollToTop}>
 						<NavLink className={'font-teko trans-opacity'} to={el.toLocaleLowerCase()}>
