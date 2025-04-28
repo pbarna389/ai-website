@@ -17,5 +17,9 @@ export const fetchData = async <DataT>(queryName: string, pageParam: string): Pr
 
 	const data: Promise<DataT> = await incomingData.json()
 
+	if (!incomingData.ok) {
+		throw new Error(`Data cannot be accessed, code: ${incomingData.status}`)
+	}
+
 	return data
 }

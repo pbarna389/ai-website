@@ -14,7 +14,7 @@ export const useGetInfiniteScrollData = <
 		DataType,
 		Error,
 		InfiniteData<DataType, string>,
-		unknown[],
+		string[],
 		string
 	>({
 		queryKey: [queryKey],
